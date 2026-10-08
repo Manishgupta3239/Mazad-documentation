@@ -1,191 +1,26 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MAZAD · Zoho Books API Documentation</title>
-<style>
-:root{--bg:#f7f9fc;--panel:#fff;--panel2:#f1f5f9;--text:#172033;--muted:#667085;--line:#e4e9f0;--blue:#1769e0;--blue2:#0b4db8;--soft:#eaf2ff;--green:#16835b;--greenSoft:#e9f8f1;--orange:#a85b00;--orangeSoft:#fff4e5;--code:#101828;--shadow:0 10px 35px rgba(17,34,68,.08)}
-[data-theme=dark]{--bg:#0b1020;--panel:#111827;--panel2:#182235;--text:#edf2f7;--muted:#9aa7ba;--line:#29364a;--blue:#71a7ff;--blue2:#9bc0ff;--soft:#152b4e;--green:#5ad4a2;--greenSoft:#102c23;--orange:#ffb55c;--orangeSoft:#382816;--code:#080d17;--shadow:0 15px 45px rgba(0,0,0,.28)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
-button,input{font:inherit}.top{height:68px;position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;gap:18px;padding:0 24px;background:color-mix(in srgb,var(--panel) 90%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.brand{font-weight:850;letter-spacing:-.03em;white-space:nowrap}.brand span{color:var(--blue)}
-.search{position:relative;flex:1;max-width:560px;margin:auto}.search input{width:100%;height:42px;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:0 44px 0 39px;outline:0}.search input:focus{border-color:var(--blue);box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 18%,transparent)}.search i{position:absolute;left:13px;top:8px;color:var(--muted);font-style:normal;font-size:20px}.kbd{position:absolute;right:9px;top:9px;font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
-.btn{height:40px;min-width:40px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:9px;cursor:pointer}.btn:hover{border-color:var(--blue);transform:translateY(-1px)}
-.layout{max-width:1500px;margin:auto;padding-top:68px;display:grid;grid-template-columns:280px minmax(0,1fr)}aside{position:sticky;top:68px;height:calc(100vh - 68px);overflow:auto;background:var(--panel);border-right:1px solid var(--line);padding:24px 16px}.side{font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--muted);margin:17px 10px 7px}.nav a{display:block;padding:7px 10px;border-radius:7px;text-decoration:none;color:var(--muted);font-size:13px}.nav a:hover,.nav a.active{background:var(--soft);color:var(--blue2);font-weight:700}
-main{max-width:1080px;padding:45px clamp(25px,5vw,82px) 100px;min-width:0}.hero{padding:42px 0 32px;border-bottom:1px solid var(--line)}.pill{display:inline-flex;padding:5px 11px;border-radius:99px;background:var(--soft);color:var(--blue2);font-size:11px;font-weight:800}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.04;letter-spacing:-.05em;margin:18px 0 13px}.hero p{font-size:18px;color:var(--muted);max-width:800px}.sandbox{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:8px;background:var(--greenSoft);color:var(--green);font-weight:750;font-size:13px}
-h2{font-size:30px;letter-spacing:-.03em;margin:67px 0 10px}h3{font-size:20px;margin:36px 0 9px}h4{font-size:14px;margin:25px 0 8px}.lead{color:var(--muted);font-size:16px}
-.endpoint{margin:20px 0 30px;border:1px solid var(--line);border-radius:14px;background:var(--panel);box-shadow:var(--shadow);overflow:hidden}.ephead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:17px 19px;border-bottom:1px solid var(--line)}.method{font-size:10px;font-weight:900;padding:4px 9px;border-radius:5px}.GET{color:#155eef;background:#eaf2ff}.POST{color:#067647;background:#e9f8f1}.epname{font-weight:750}.url{margin:0;padding:15px 19px;background:var(--code);color:#dbe6f4;font:12px/1.65 ui-monospace,Consolas,monospace;white-space:pre-wrap;word-break:break-all}.epbody{padding:19px}
-table{width:100%;border-collapse:collapse;font-size:13px}.table{overflow:auto;border:1px solid var(--line);border-radius:10px;margin:12px 0 22px}th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}th{background:var(--panel2);color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border-bottom:0}
-.req{color:#b42318;font-size:11px;font-weight:800}.opt{color:var(--muted);font-size:11px;font-weight:750}.tag{font:11px ui-monospace,Consolas,monospace;background:var(--panel2);border:1px solid var(--line);padding:1px 5px;border-radius:5px}
-.code{background:var(--code);border:1px solid #253247;border-radius:9px;overflow:hidden;margin:13px 0 21px}.codebar{padding:8px 12px;border-bottom:1px solid #253247;color:#98a8bd;font-size:10px;display:flex;justify-content:space-between}.copy{border:1px solid #334155;background:transparent;color:#b7c4d6;border-radius:5px;padding:3px 7px;cursor:pointer;font-size:10px}.code pre{margin:0;padding:16px;overflow:auto;color:#dbe6f4;font:12px/1.65 ui-monospace,Consolas,monospace}
-.note{border-left:4px solid var(--blue);background:var(--soft);padding:13px 15px;border-radius:0 8px 8px 0;margin:17px 0}.note.good{border-color:var(--green);background:var(--greenSoft)}.note.warn{border-color:var(--orange);background:var(--orangeSoft)}.note b{display:block;margin-bottom:2px}
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}.step{padding:16px;border:1px solid var(--line);background:var(--panel);border-radius:11px;transition:.22s}.step:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.num{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:white;font-size:11px;font-weight:800}.step strong{display:block;margin-top:8px;font-size:13px}.step small{color:var(--muted)}
-.hidden{display:none!important}.back{position:fixed;right:23px;bottom:23px;opacity:0;pointer-events:none;transition:.2s}.back.show{opacity:1;pointer-events:auto}.mobile{display:none}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.mobile{display:block}aside{position:fixed;z-index:45;left:0;top:68px;width:285px;transform:translateX(-105%);transition:.25s;box-shadow:var(--shadow)}body.menu-open aside{transform:none}main{padding:32px 20px 80px}.flow{grid-template-columns:1fr 1fr}.top{padding:0 12px;gap:8px}.brand{font-size:14px}.search{max-width:none}.kbd{display:none}}
-@media(max-width:560px){.flow{grid-template-columns:1fr}.hero h1{font-size:39px}main{padding-left:15px;padding-right:15px}}
-</style>
-</head>
-<body>
-<header class="top">
-<button class="btn mobile" id="menu">☰</button><div class="brand">MAZAD <span>API Docs</span></div>
-<div class="search"><i>⌕</i><input id="search" placeholder="Search documentation…"><span class="kbd">Ctrl K</span></div>
-<button class="btn" id="theme" title="Toggle theme">☾</button>
-</header>
-<div class="layout">
-<aside id="side">
-<div class="side">Getting Started</div><nav class="nav">
-<a href="#overview">Overview</a><a href="#configuration">Configuration</a><a href="#conventions">Request Conventions</a><a href="#auth">Authentication</a></nav>
-<div class="side">Contacts</div><nav class="nav"><a href="#customers">Get Customers</a><a href="#vendors">Get Vendors</a></nav>
-<div class="side">Invoices</div><nav class="nav"><a href="#invoices">Invoice APIs</a><a href="#create-invoice">Create Invoice</a><a href="#invoice-url">Invoice View URL</a></nav>
-<div class="side">Payments</div><nav class="nav"><a href="#payment">Create Payment</a></nav>
-<div class="side">Credit Notes</div><nav class="nav"><a href="#credit">Create Credit Note</a></nav>
-<div class="side">Integration</div><nav class="nav"><a href="#flow">Integration Flow</a><a href="#rules">Key Rules</a><a href="#quick">Quick Reference</a></nav>
-</aside>
-<main>
-<section class="hero" id="top"><span class="pill">ZOHO BOOKS · API V3</span><h1>Mazad<br>Zoho Books API</h1><p>Client-facing API documentation for integrating Mazad with Zoho Books — including customers, vendors, invoices, payments, credit notes, and invoice view URLs.</p><span class="sandbox">● Sandbox · Organization ID 941299173</span></section>
-
-<section id="overview"><h2>Overview</h2><p class="lead">This documentation describes the APIs provided for the Mazad → Zoho Books integration.</p><div class="flow">
-<div class="step"><span class="num">1</span><strong>Identify customer</strong><small>Use the customer ID stored in Mazad.</small></div><div class="step"><span class="num">2</span><strong>Create invoice</strong><small>Send Mazad invoice information.</small></div><div class="step"><span class="num">3</span><strong>Store invoice ID</strong><small>Persist the returned Zoho invoice ID.</small></div><div class="step"><span class="num">4</span><strong>Collect payment</strong><small>Apply payment to the stored invoice.</small></div></div>
-</section>
-
-<section id="configuration"><h2>Integration Configuration</h2><p class="lead">These values are used by the integration. The organization is a Zoho Books Sandbox organization.</p>
-<div class="table"><table><tr><th>Configuration</th><th>Value</th><th>Usage</th></tr>
-<tr><td>Organization ID</td><td><code>941299173</code></td><td>Zoho Books Sandbox organization.</td></tr><tr><td>Refresh Token</td><td><code>{{ZOHO_REFRESH_TOKEN}}</code></td><td>Used to obtain a fresh access token.</td></tr><tr><td>Client ID</td><td><code>{{ZOHO_CLIENT_ID}}</code></td><td>OAuth client identifier.</td></tr><tr><td>Client Secret</td><td><code>{{ZOHO_CLIENT_SECRET}}</code></td><td>OAuth client secret.</td></tr><tr><td>Redirect URI</td><td><code>http://www.zoho.com/books</code></td><td>Configured OAuth redirect URI.</td></tr><tr><td>Grant Type</td><td><code>refresh_token</code></td><td>Refresh-token access-token request.</td></tr></table></div>
-<div class="note"><b>Access Token</b>Authenticated Zoho Books requests use <span class="tag">Authorization: Zoho-oauthtoken {{access token}}</span>.</div></section>
-
-<section id="conventions"><h2>General Request Conventions</h2><div class="table"><table><tr><th>Item</th><th>Description</th></tr><tr><td>Authentication</td><td>Authenticated Zoho Books requests use the OAuth access token in the Authorization header.</td></tr><tr><td>Organization ID</td><td>Use <span class="tag">941299173</span> for this Sandbox integration.</td></tr><tr><td>IDs</td><td>Store and pass customer IDs, invoice IDs, credit note IDs and tax IDs exactly as returned.</td></tr><tr><td>Dates</td><td>Examples use <span class="tag">YYYY-MM-DD</span>.</td></tr></table></div></section>
-
-<section id="auth"><h2>Authentication</h2><p class="lead">OAuth flow details are intentionally not described here. These are the token operations present in the collection.</p>
-<div class="endpoint"><div class="ephead"><span class="method POST">POST</span><span class="epname">Access Token and Refresh Token</span></div><pre class="url">https://accounts.zoho.com/oauth/v2/token?code=&client_id={{ZOHO_CLIENT_ID}}&client_secret={{ZOHO_CLIENT_SECRET}}&redirect_uri=http://www.zoho.com/books&grant_type=authorization_code</pre></div>
-<div class="endpoint"><div class="ephead"><span class="method POST">POST</span><span class="epname">Get Access Token</span></div><pre class="url">https://accounts.zoho.com/oauth/v2/token?refresh_token={{refresh token}}&client_id={{ZOHO_CLIENT_ID}}&client_secret={{ZOHO_CLIENT_SECRET}}&redirect_uri=http://www.zoho.com/books&grant_type=refresh_token</pre></div></section>
-
-<section id="customers"><h2>Customers</h2><h3>Get Customers</h3><p>Retrieves customer contacts from Zoho Books using <span class="tag">contact_type=customer</span>.</p><div class="endpoint"><div class="ephead"><span class="method GET">GET</span><span class="epname">Get Customers</span></div><pre class="url">https://www.zohoapis.com/books/v3/contacts?organization_id={{organization_id}}&contact_type=customer&page=1</pre><div class="epbody"><div class="table"><table><tr><th>Parameter</th><th>Required</th><th>Description</th></tr><tr><td>organization_id</td><td class="req">Required</td><td>Zoho Books Sandbox organization ID.</td></tr><tr><td>contact_type</td><td class="req">Required</td><td><code>customer</code>.</td></tr><tr><td>page</td><td class="req">Required</td><td>Page number.</td></tr><tr><td>per_page</td><td class="opt">Optional</td><td>Records requested per page.</td></tr></table></div><div class="note"><b>Pagination</b>Increase <span class="tag">page</span> to retrieve further data. Use <span class="tag">per_page</span> to control the number of records per page and continue until no more records are returned.</div></div></div></section>
-
-<section id="vendors"><h2>Vendors</h2><h3>Get Vendors</h3><p>Retrieves vendor contacts from Zoho Books using <span class="tag">contact_type=vendor</span>.</p><div class="endpoint"><div class="ephead"><span class="method GET">GET</span><span class="epname">Get Vendors</span></div><pre class="url">https://www.zohoapis.com/books/v3/contacts?organization_id={{organization_id}}&contact_type=vendor&per_page=2</pre><div class="epbody"><div class="table"><table><tr><th>Parameter</th><th>Required</th><th>Description</th></tr><tr><td>organization_id</td><td class="req">Required</td><td>Zoho Books Sandbox organization ID.</td></tr><tr><td>contact_type</td><td class="req">Required</td><td><code>vendor</code>.</td></tr><tr><td>page</td><td class="opt">Optional</td><td>Page number.</td></tr><tr><td>per_page</td><td class="opt">Optional</td><td>Records requested per page.</td></tr></table></div></div></div></section>
-
-<section id="invoices"><h2>Invoice APIs</h2><h3>Get Invoices</h3><div class="endpoint"><div class="ephead"><span class="method GET">GET</span><span class="epname">Get Invoices</span></div><pre class="url">https://www.zohoapis.com/books/v3/invoices?organization_id={{organization_id}}</pre></div>
-<h3>Get Invoices of a Customer</h3><div class="endpoint"><div class="ephead"><span class="method GET">GET</span><span class="epname">Get Customer Invoices</span></div><pre class="url">https://www.zohoapis.com/books/v3/invoices?organization_id={{organization_id}}&customer_id={CUSTOMER_ID}</pre><div class="epbody"><div class="note"><b>Dynamic customer ID</b>Pass the customer's Zoho Books <span class="tag">customer_id</span> dynamically from customer data.</div></div></div>
-<h3>Get an Invoice</h3><div class="endpoint"><div class="ephead"><span class="method GET">GET</span><span class="epname">Get an Invoice</span></div><pre class="url">https://www.zohoapis.com/books/v3/invoices/{INVOICE_ID}?organization_id={{organization_id}}</pre><div class="epbody">Replace <span class="tag">{INVOICE_ID}</span> with the stored Zoho Books invoice ID.</div></div></section>
-
-<section id="create-invoice"><h3>Create Invoice</h3><div class="endpoint"><div class="ephead"><span class="method POST">POST</span><span class="epname">Create Invoice</span></div><pre class="url">https://www.zohoapis.com/books/v3/settings/incomingwebhooks/iw__sb_941299173_create_inovoice/execute?auth_type=apikey&encapiKey={{ZOHO_WEBHOOK_API_KEY}}</pre><div class="epbody"><p>Creates an invoice in Zoho Books based on the information provided by Mazad.</p>
-<h4>Required request body</h4><div class="code"><div class="codebar"><span>JSON</span><button class="copy" data-copy='{"mazad_user_id":"3001","date":"2026-10-06","due_date":"2026-10-13","payment_terms":0,"payment_terms_label":"Due on Receipt","line_items":[{"name":"test item 1","rate":2000,"quantity":1}]}' >Copy</button></div><pre>{
-  "mazad_user_id": "3001",
-  "date": "2026-10-06",
-  "due_date": "2026-10-13",
-  "payment_terms": 0,
-  "payment_terms_label": "Due on Receipt",
-  "line_items": [
-    {
-      "name": "test item 1",
-      "rate": 2000,
-      "quantity": 1
-    }
-  ]
-}</pre></div>
-<div class="table"><table><tr><th>Field</th><th>Required</th><th>Description</th></tr><tr><td>mazad_user_id</td><td class="req">Required</td><td>Customer ID stored in the Mazad database.</td></tr><tr><td>date</td><td class="req">Required</td><td>Invoice date.</td></tr><tr><td>due_date</td><td class="req">Required</td><td>Invoice due date.</td></tr><tr><td>payment_terms</td><td class="req">Required</td><td>Payment terms value.</td></tr><tr><td>payment_terms_label</td><td class="req">Required</td><td>Human-readable payment terms label.</td></tr><tr><td>line_items</td><td class="req">Required</td><td>Array of invoice items.</td></tr><tr><td>line_items[].name</td><td class="req">Required</td><td>Item name.</td></tr><tr><td>line_items[].rate</td><td class="req">Required</td><td>Item rate/unit price.</td></tr><tr><td>line_items[].quantity</td><td class="req">Required</td><td>Item quantity.</td></tr><tr><td>line_items[].tax_id</td><td class="opt">Optional</td><td>Tax ID; if supplied, tax is applied only to that line item.</td></tr></table></div>
-<div class="note warn"><b>Tax ID</b>Tax is applied only to the item where <span class="tag">tax_id</span> is supplied. Find Tax IDs in Zoho Books → <b>Settings → Taxes</b> by searching for the relevant tax.</div>
-<div class="note good"><b>Store the Invoice ID</b>After successful creation, store the returned <span class="tag">invoice_id</span> in the Mazad database against the corresponding customer/transaction. It is required for future invoice operations.</div>
-<h4>Success response</h4><div class="code"><div class="codebar"><span>JSON</span><button class="copy" data-copy='{"code":0,"message":"success","response":{"client_asset_owner_id":"2","code":0,"zoho_customer_id":"1528435000000146089","zoho_asset_owner_id":"1528435000000107011","client_customer_id":"3001","invoice_id":"1528435000000186002","customer_name":"John test","message":"Invoice created successfully","asset_owner_name":"test 2","invoice_number":"INV-000042"}}'>Copy</button></div><pre>{
-  "code": 0,
-  "message": "success",
-  "response": {
-    "client_asset_owner_id": "2",
-    "code": 0,
-    "zoho_customer_id": "1528435000000146089",
-    "zoho_asset_owner_id": "1528435000000107011",
-    "client_customer_id": "3001",
-    "invoice_id": "1528435000000186002",
-    "customer_name": "John test",
-    "message": "Invoice created successfully",
-    "asset_owner_name": "test 2",
-    "invoice_number": "INV-000042"
-  }
-}</pre></div></div></div></section>
-
-<section id="payment"><h2>Payments</h2><h3>Create Payment</h3><div class="endpoint"><div class="ephead"><span class="method POST">POST</span><span class="epname">Create Payment</span></div><pre class="url">https://www.zohoapis.com/books/v3/settings/incomingwebhooks/iw__sb_941299173_creating_payment/execute?auth_type=apikey&encapiKey={{ZOHO_WEBHOOK_API_KEY}}</pre><div class="epbody"><p>Creates a payment in Zoho Books and applies it to the specified invoice(s).</p><h4>Request body</h4><div class="code"><div class="codebar"><span>JSON</span><button class="copy" data-copy='{"mazad_user_id":"3001","payment_mode":"banktransfer","amount":2200,"date":"2026-10-05","reference_number":"PAY-12345","description":"Payment received","invoices":[{"invoice_id":"1528435000000182002","amount_applied":2200}]}'>Copy</button></div><pre>{
-  "mazad_user_id": "3001",
-  "payment_mode": "banktransfer",
-  "amount": 2200,
-  "date": "2026-10-05",
-  "reference_number": "PAY-12345",
-  "description": "Payment received",
-  "invoices": [{"invoice_id": "1528435000000182002","amount_applied": 2200}]
-}</pre></div><div class="table"><table><tr><th>Field</th><th>Required</th><th>Description</th></tr><tr><td>mazad_user_id</td><td class="req">Required</td><td>Customer ID stored in Mazad.</td></tr><tr><td>payment_mode</td><td class="req">Required</td><td>Payment mode.</td></tr><tr><td>amount</td><td class="req">Required</td><td>Total payment amount.</td></tr><tr><td>date</td><td class="req">Required</td><td>Payment date.</td></tr><tr><td>reference_number</td><td class="opt">Optional</td><td>Payment reference.</td></tr><tr><td>description</td><td class="opt">Optional</td><td>Payment description.</td></tr><tr><td>invoices</td><td class="req">Required</td><td>Invoices to which payment is applied.</td></tr><tr><td>invoices[].invoice_id</td><td class="req">Required</td><td>Zoho Books invoice ID.</td></tr><tr><td>invoices[].amount_applied</td><td class="req">Required</td><td>Amount applied to that invoice.</td></tr></table></div><h4>Success response</h4><div class="code"><div class="codebar"><span>JSON</span><button class="copy" data-copy='{"code":0,"message":"success","response":{"code":0,"zoho_customer_id":"1528435000000146089","payment_number":"16","payment_id":"1528435000000187014","client_customer_id":"3001","customer_name":"John test","message":"Payment created successfully"}}'>Copy</button></div><pre>{
-  "code": 0,
-  "message": "success",
-  "response": {
-    "code": 0,
-    "zoho_customer_id": "1528435000000146089",
-    "payment_number": "16",
-    "payment_id": "1528435000000187014",
-    "client_customer_id": "3001",
-    "customer_name": "John test",
-    "message": "Payment created successfully"
-  }
-}</pre></div></div></div></section>
-
-<section id="credit"><h2>Credit Notes</h2><h3>Create Credit Note</h3><div class="endpoint"><div class="ephead"><span class="method POST">POST</span><span class="epname">Create Credit Note</span></div><pre class="url">https://www.zohoapis.com/books/v3/creditnotes?organization_id={{organization_id}}&invoice_id={INVOICE_ID}</pre><div class="epbody"><p>Creates a credit note against an invoice. The invoice ID must be supplied dynamically in the URL.</p><h4>Request body</h4><div class="code"><div class="codebar"><span>JSON</span><button class="copy" data-copy='{"customer_id":"1528435000000146089","date":"2026-10-07","reference_number":"INV-000041","place_of_supply":"BH","currency_id":"1528435000000096097","exchange_rate":1,"line_items":[{"name":"test item 1","rate":2000,"quantity":1},{"name":"test item 2","rate":200,"quantity":1}],"notes":"Credit note for invoice INV-000041"}'>Copy</button></div><pre>{
-  "customer_id": "1528435000000146089",
-  "date": "2026-10-07",
-  "reference_number": "INV-000041",
-  "place_of_supply": "BH",
-  "currency_id": "1528435000000096097",
-  "exchange_rate": 1,
-  "line_items": [
-    {"name": "test item 1", "rate": 2000, "quantity": 1},
-    {"name": "test item 2", "rate": 200, "quantity": 1}
-  ],
-  "notes": "Credit note for invoice INV-000041"
-}</pre></div><div class="table"><table><tr><th>Field</th><th>Required</th><th>Description</th></tr><tr><td>organization_id</td><td class="req">Required</td><td>Zoho Books Sandbox organization ID.</td></tr><tr><td>invoice_id</td><td class="req">Required</td><td>Passed dynamically in the URL.</td></tr><tr><td>customer_id</td><td class="req">Required</td><td>Zoho Books customer ID.</td></tr><tr><td>date</td><td class="req">Required</td><td>Credit note date.</td></tr><tr><td>reference_number</td><td class="opt">Optional</td><td>Reference number.</td></tr><tr><td>place_of_supply</td><td class="opt">Optional</td><td>Place of supply.</td></tr><tr><td>currency_id</td><td class="opt">Optional</td><td>Zoho Books currency ID.</td></tr><tr><td>exchange_rate</td><td class="opt">Optional</td><td>Exchange rate.</td></tr><tr><td>line_items</td><td class="req">Required</td><td>Items being credited.</td></tr><tr><td>line_items[].name</td><td class="req">Required</td><td>Item name.</td></tr><tr><td>line_items[].rate</td><td class="req">Required</td><td>Item rate.</td></tr><tr><td>line_items[].quantity</td><td class="req">Required</td><td>Quantity.</td></tr><tr><td>notes</td><td class="opt">Optional</td><td>Credit note notes.</td></tr></table></div><h4>Success response · representative</h4><div class="code"><div class="codebar"><span>JSON</span><button class="copy" data-copy='{"code":0,"message":"The credit note has been created.","creditnote":{"creditnote_id":"1528435000000185005","creditnote_number":"CN-00012","status":"open","invoice_id":"1528435000000186002","invoice_number":"INV-000042","customer_id":"1528435000000146089","customer_name":"John test","total":2200,"balance":2000}}'>Copy</button></div><pre>{
-  "code": 0,
-  "message": "The credit note has been created.",
-  "creditnote": {
-    "creditnote_id": "1528435000000185005",
-    "creditnote_number": "CN-00012",
-    "status": "open",
-    "invoice_id": "1528435000000186002",
-    "invoice_number": "INV-000042",
-    "customer_id": "1528435000000146089",
-    "customer_name": "John test",
-    "total": 2200.000,
-    "balance": 2000.000
-  }
-}</pre></div></div></div></section>
-
-<section id="invoice-url"><h2>Invoice View URL</h2><h3>Get Invoice View URL</h3><div class="endpoint"><div class="ephead"><span class="method POST">POST</span><span class="epname">Get Invoice View URL</span></div><pre class="url">https://www.zohoapis.com/books/v3/settings/incomingwebhooks/iw__sb_941299173_generate_invoice_link/execute?auth_type=apikey&encapiKey={{ZOHO_WEBHOOK_API_KEY}}</pre><div class="epbody"><h4>Request body</h4><div class="code"><div class="codebar"><span>JSON</span><button class="copy" data-copy='{"invoice_id":"1528435000000182002"}'>Copy</button></div><pre>{"invoice_id":"1528435000000182002"}</pre></div><h4>Success response</h4><div class="code"><div class="codebar"><span>JSON</span><button class="copy" data-copy='{"code":0,"message":"success","response":{"code":0,"file_name":"Invoice_1528435000000182002.pdf","invoice_id":"1528435000000182002","view_url":"https://workdrive.zohoexternal.com/external/4d9a5e46269a9b22dca104960758e20013ffc74b1c785397ea8abbd35b55ef8b","message":"success"}}'>Copy</button></div><pre>{
-  "code": 0,
-  "message": "success",
-  "response": {
-    "code": 0,
-    "file_name": "Invoice_1528435000000182002.pdf",
-    "invoice_id": "1528435000000182002",
-    "view_url": "https://workdrive.zohoexternal.com/external/4d9a5e46269a9b22dca104960758e20013ffc74b1c785397ea8abbd35b55ef8b",
-    "message": "success"
-  }
-}</pre></div><div class="note good"><b>Invoice View URL</b>The response returns <span class="tag">view_url</span>, the invoice view URL generated for the requested invoice.</div></div></div></section>
-
-<section id="flow"><h2>Recommended Integration Flow</h2><div class="flow"><div class="step"><span class="num">1</span><strong>Get customers</strong><small>Retrieve and paginate customer data.</small></div><div class="step"><span class="num">2</span><strong>Create invoice</strong><small>Use Mazad's customer ID as <code>mazad_user_id</code>.</small></div><div class="step"><span class="num">3</span><strong>Persist invoice ID</strong><small>Save the returned <code>invoice_id</code>.</small></div><div class="step"><span class="num">4</span><strong>Generate view URL</strong><small>Send the stored invoice ID.</small></div></div><div class="flow"><div class="step"><span class="num">5</span><strong>Receive payment</strong><small>Apply payment against the invoice.</small></div><div class="step"><span class="num">6</span><strong>Retrieve invoice</strong><small>Use the stored ID for lookups.</small></div><div class="step"><span class="num">7</span><strong>Create credit note</strong><small>Pass invoice ID dynamically.</small></div><div class="step"><span class="num">8</span><strong>Keep IDs mapped</strong><small>Maintain Mazad ↔ Zoho identifiers.</small></div></div></section>
-
-<section id="rules"><h2>Key Integration Rules</h2><div class="note warn"><b>Mazad customer identifier</b><span class="tag">mazad_user_id</span> must be the customer's ID stored in the Mazad database.</div><div class="note"><b>Tax application</b>When <span class="tag">tax_id</span> is supplied for a line item, the tax applies only to that item.</div><div class="note"><b>Tax ID location</b>Find Tax IDs in Zoho Books → <b>Settings → Taxes</b>.</div><div class="note good"><b>Store invoice ID</b>Store the returned <span class="tag">invoice_id</span> in Mazad for future operations.</div><div class="note"><b>Pagination</b>Use <span class="tag">page</span> for further data and <span class="tag">per_page</span> for page size.</div><div class="note"><b>Dynamic IDs</b>Supply <span class="tag">customer_id</span> and <span class="tag">invoice_id</span> dynamically.</div></section>
-
-<section id="quick"><h2>API Quick Reference</h2><div class="table"><table><tr><th>API</th><th>Method</th><th>Purpose</th></tr><tr><td>Access Token and Refresh Token</td><td>POST</td><td>Initialize OAuth credentials.</td></tr><tr><td>Get Access Token</td><td>POST</td><td>Refresh active access token.</td></tr><tr><td>Get Customers</td><td>GET</td><td>Retrieve customer contacts.</td></tr><tr><td>Get Vendors</td><td>GET</td><td>Retrieve vendor contacts.</td></tr><tr><td>Get Invoices</td><td>GET</td><td>Retrieve invoices.</td></tr><tr><td>Get Customer Invoices</td><td>GET</td><td>Retrieve invoices for a customer.</td></tr><tr><td>Get Invoice</td><td>GET</td><td>Retrieve a specific invoice.</td></tr><tr><td>Create Invoice</td><td>POST</td><td>Create an invoice from Mazad information.</td></tr><tr><td>Create Payment</td><td>POST</td><td>Create and apply a payment.</td></tr><tr><td>Create Credit Note</td><td>POST</td><td>Create a credit note.</td></tr><tr><td>Get Invoice View URL</td><td>POST</td><td>Generate an invoice view URL.</td></tr></table></div></section>
-</main></div>
-<button class="btn back" id="back">↑</button>
-<script>
-const root=document.documentElement,theme=document.getElementById('theme'),search=document.getElementById('search');
-const saved=localStorage.getItem('mazad-theme');if(saved)root.dataset.theme=saved;
-function paint(){theme.textContent=root.dataset.theme==='dark'?'☀':'☾'}paint();
-theme.onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('mazad-theme',root.dataset.theme);paint()};
-document.getElementById('menu').onclick=()=>document.body.classList.toggle('menu-open');
-document.querySelectorAll('.nav a').forEach(a=>a.onclick=()=>document.body.classList.remove('menu-open'));
-document.querySelectorAll('.copy').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);let x=b.textContent;b.textContent='Copied ✓';setTimeout(()=>b.textContent=x,1100)}catch(e){b.textContent='Copy failed'}});
-search.oninput=()=>{let q=search.value.trim().toLowerCase();document.querySelectorAll('main section').forEach(s=>s.classList.toggle('hidden',!!q&&!s.textContent.toLowerCase().includes(q)))};
-document.onkeydown=e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus()}};
-const links=[...document.querySelectorAll('.nav a')],secs=[...document.querySelectorAll('main section[id]')];
-new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}),{rootMargin:'-20% 0 -65%'}).observe(secs[0]);
-secs.slice(1).forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}),{rootMargin:'-20% 0 -65%'}).observe(s));
-const back=document.getElementById('back');onscroll=()=>back.classList.toggle('show',scrollY>500);back.onclick=()=>scrollTo({top:0,behavior:'smooth'});
-</script>
-</body>
+<html lang="en" data-theme="light" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Client API documentation for integrating Mazad with Zoho Books (API v3)."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%235a48f5'/%3E%3Cpath d='M9 22V10l7 8 7-8v12' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mazad × Zoho Books API Documentation</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
