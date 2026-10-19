@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-let savedTheme = null
+let savedTheme
 try {
   savedTheme = window.localStorage.getItem('mazad-docs-theme')
 } catch {

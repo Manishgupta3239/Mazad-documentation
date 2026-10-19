@@ -11,12 +11,15 @@ function LoginPage({ onAuthenticated }) {
   const [hasError, setHasError] = useState(false);
   const [theme, setTheme] = useState(() => {
     try {
-      return window.localStorage.getItem(THEME_STORAGE_KEY) === "dark"
-        ? "dark"
-        : "light";
+      const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+      if (storedTheme === "dark" || storedTheme === "light") return storedTheme;
     } catch {
-      return "light";
+      // Fall through to the theme already resolved in main.jsx.
     }
+    // main.jsx has already applied the stored theme or the system preference.
+    return document.documentElement.getAttribute("data-theme") === "dark"
+      ? "dark"
+      : "light";
   });
 
   useLayoutEffect(() => {
