@@ -6,15 +6,35 @@ const CAP_M = `style="font: 700 9.5px var(--mono); padding: 3px 5px; border-radi
 const ORG_ID = "941299173";
 const CLIENT_ID = "1000.DJQKYV6HZY3O2CLIFWAVONZPMWXSGT";
 const CLIENT_SECRET = "1178ef3e182949b60be66fe7b0fb8630ec3d71888c";
-const REFRESH_TOKEN = "1000.c8d8b7ecd2580a83812f260435f79ff7.62b9416c3d0f726917e2608913f05e66";
+const REFRESH_TOKEN =
+  "1000.c8d8b7ecd2580a83812f260435f79ff7.62b9416c3d0f726917e2608913f05e66";
 const REDIRECT_URI = "http://www.zoho.com/books";
-const WEBHOOK_BASE = "https://www.zohoapis.com/books/v3/settings/incomingwebhooks";
-const WH_CREATE_INVOICE = { name: "iw__sb_941299173_create_inovoice", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x1%2B9u09VWkByoy%2FFDaQ4MMxg5ikmFmEKdw9TTjjf6hN3GxVJyYPRg%3D" };
-const WH_CREATE_PAYMENT = { name: "iw__sb_941299173_creating_payment", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x17P6O80WkByoy%2FFDaQ4MMxg5ikmFmEKdw9TTjjfKQOUCuQ4qcOxPz" };
-const WH_INVOICE_LINK = { name: "iw__sb_941299173_get_invoice_view_link", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x13My11GCkByoy%2FFDaQ4MMxg5ikmFmEKd04iXdkPWIMXa9R6yHNxjwiNK1A3o%3D" };
-const WH_CREATE_DEPOSIT = { name: "iw__sb_941299173_create_deposits", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x19%2FmUy1WkByoy%2FFDaQ4MMxg5ikmFmEKdw9TTjjf6hOnquTYCYKg4%3D" };
-const WH_REFUND = { name: "iw__sb_941299173_refund_amount", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x1w96k62SkByoy%2FFDaQ4MMxg5ikmFmEKdh4jf3l%2F%2BhP3KxV52F" };
-const WH_APPLY_CREDIT = { name: "iw__sb_941299173_apply_credit_to_invoice", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x19%2FmK1nykByoy%2FFDaQ4MMxg5ikmFmEKdy9yHugMSdLHq6S4euKhLYvtCqAngrlA%3D%3D" };
+const WEBHOOK_BASE =
+  "https://www.zohoapis.com/books/v3/settings/incomingwebhooks";
+const WH_CREATE_INVOICE = {
+  name: "iw__sb_941299173_create_inovoice",
+  key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x1%2B9u09VWkByoy%2FFDaQ4MMxg5ikmFmEKdw9TTjjf6hN3GxVJyYPRg%3D",
+};
+const WH_CREATE_PAYMENT = {
+  name: "iw__sb_941299173_creating_payment",
+  key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x17P6O80WkByoy%2FFDaQ4MMxg5ikmFmEKdw9TTjjfKQOUCuQ4qcOxPz",
+};
+const WH_INVOICE_LINK = {
+  name: "iw__sb_941299173_get_invoice_view_link",
+  key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x13My11GCkByoy%2FFDaQ4MMxg5ikmFmEKd04iXdkPWIMXa9R6yHNxjwiNK1A3o%3D",
+};
+const WH_CREATE_DEPOSIT = {
+  name: "iw__sb_941299173_create_deposits",
+  key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x19%2FmUy1WkByoy%2FFDaQ4MMxg5ikmFmEKdw9TTjjf6hOnquTYCYKg4%3D",
+};
+const WH_REFUND = {
+  name: "iw__sb_941299173_refund_amount",
+  key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x1w96k62SkByoy%2FFDaQ4MMxg5ikmFmEKdh4jf3l%2F%2BhP3KxV52F",
+};
+const WH_APPLY_CREDIT = {
+  name: "iw__sb_941299173_apply_credit_to_invoice",
+  key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x19%2FmK1nykByoy%2FFDaQ4MMxg5ikmFmEKdy9yHugMSdLHq6S4euKhLYvtCqAngrlA%3D%3D",
+};
 
 const copyBtn = (value, label = "Copy URL", aria = "Copy URL") =>
   `<button class="copy" type="button" data-copy="${value}" aria-label="${aria}">${COPY_ICON}<span class="lbl">${label}</span></button>`;
@@ -44,18 +64,24 @@ const codeBlock = (title, badge, json) => {
 
 // Turns a pretty-printed JSON string into the highlighted line spans used by the page.
 function highlightJson(src) {
-  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const esc = (s) =>
+    s
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   return src
     .split("\n")
     .map((line) => {
       const out = line.replace(
         /("(?:\\.|[^"\\])*")(\s*:)?|(-?\d+(?:\.\d+)?)|([{}[\],:])/g,
         (_match, str, colon, num, punct) => {
-          if (str && colon) return `<span class="j-k">${esc(str)}</span><span class="j-p">:</span>`;
+          if (str && colon)
+            return `<span class="j-k">${esc(str)}</span><span class="j-p">:</span>`;
           if (str) return `<span class="j-s">${esc(str)}</span>`;
           if (num) return `<span class="j-n">${num}</span>`;
           return `<span class="j-p">${punct}</span>`;
-        }
+        },
       );
       return `<span class="ln">${out}</span>`;
     })
@@ -66,10 +92,12 @@ const paramTable = (head, rows) => `
   <div class="tbl-wrap reveal"><table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
 const pRow = (name, required, desc, child = false) =>
   `<tr${child ? ' class="child"' : ""}><td class="param"><code>${name}</code></td><td><span class="req ${required ? "yes" : "opt"}">${required ? "Required" : "Optional"}</span></td><td>${desc}</td></tr>`;
-const rRow = (name, desc) => `<tr><td><code>${name}</code></td><td>${desc}</td></tr>`;
+const rRow = (name, desc) =>
+  `<tr><td><code>${name}</code></td><td>${desc}</td></tr>`;
 
 const callout = (kind, title, body) => {
-  const icon = kind === "warn" ? WARN_ICON : kind === "ok" ? OK_ICON : INFO_ICON;
+  const icon =
+    kind === "warn" ? WARN_ICON : kind === "ok" ? OK_ICON : INFO_ICON;
   return `<div class="callout ${kind} reveal">${icon}<div><b>${title}</b>${body}</div></div>`;
 };
 const authChip = `<span class="chip">Header <b>Authorization: Zoho-oauthtoken {{access token}}</b></span>`;
@@ -272,10 +300,17 @@ const tokenUrlBox = (firstKey, firstVal, grant) => {
 // Books v3 URL box. `path` may contain {PLACEHOLDER}s; `params` is a list of [key, value, isPlaceholder].
 const booksUrlBox = (method, path, params) => {
   const base = "https://www.zohoapis.com/books/v3/";
-  const raw = base + path + "?" + params.map(([k, v]) => `${k}=${v}`).join("&amp;");
-  const shownPath = path.replace(/\{[A-Z_]+\}/g, (m) => `<span class="ph">${m}</span>`);
+  const raw =
+    base + path + "?" + params.map(([k, v]) => `${k}=${v}`).join("&amp;");
+  const shownPath = path.replace(
+    /\{[A-Z_]+\}/g,
+    (m) => `<span class="ph">${m}</span>`,
+  );
   const shownParams = params
-    .map(([k, v, ph], i) => `<span class="pr"><span class="k">${k}</span><span class="q">=</span><span class="v">${ph ? `<span class="ph">${v}</span>` : v}</span>${i < params.length - 1 ? '<span class="q">&amp;</span>' : ""}</span>`)
+    .map(
+      ([k, v, ph], i) =>
+        `<span class="pr"><span class="k">${k}</span><span class="q">=</span><span class="v">${ph ? `<span class="ph">${v}</span>` : v}</span>${i < params.length - 1 ? '<span class="q">&amp;</span>' : ""}</span>`,
+    )
     .join("");
   return `
   <div class="url-box reveal">
@@ -397,11 +432,26 @@ const documentationMarkup = `
             ${callout("info", "Webhook-based APIs", `Create Invoice, Create Customer Deposit, Apply Payment to Invoices, Apply Credit to Invoice and Get Invoice View &amp; Download URL are called with the API key in the URL (<code>encapiKey</code>), so they do not use these OAuth scopes. <code>ZohoBooks.fullaccess.all</code> is the simplest choice for the Sandbox; use the specific scopes above when you want to limit access.`)}
             <h4 class="mini reveal" id="get-client-code">Generate the code</h4>
             <p class="reveal">In the Self Client, open the <b>Generate Code</b> tab and fill in the fields below, then click <b>Create</b>. The console displays the code; copy it immediately.</p>
-            ${paramTable(["Field", "Required", "Value / Description"], [
-              pRow("Scope", true, "The scopes from the table above, comma separated. For example <code>ZohoBooks.contacts.READ,ZohoBooks.invoices.READ,ZohoBooks.creditnotes.CREATE</code>."),
-              pRow("Time Duration", true, "How long the code stays valid. Choose a duration long enough to complete the token request (for example 10 minutes)."),
-              pRow("Scope Description", true, "A short note describing the purpose, for example <code>Mazad Zoho Books integration</code>."),
-            ])}
+            ${paramTable(
+              ["Field", "Required", "Value / Description"],
+              [
+                pRow(
+                  "Scope",
+                  true,
+                  "The scopes from the table above, comma separated. For example <code>ZohoBooks.contacts.READ,ZohoBooks.invoices.READ,ZohoBooks.creditnotes.CREATE</code>.",
+                ),
+                pRow(
+                  "Time Duration",
+                  true,
+                  "How long the code stays valid. Choose a duration long enough to complete the token request (for example 10 minutes).",
+                ),
+                pRow(
+                  "Scope Description",
+                  true,
+                  "A short note describing the purpose, for example <code>Mazad Zoho Books integration</code>.",
+                ),
+              ],
+            )}
             ${callout("warn", "The code is short-lived and single-use", "The code expires after the selected time duration and can be used only once. If the token request fails because the code is invalid or expired, generate a new code and try again.")}
             <h4 class="mini reveal" id="get-client-tokens">Exchange the code for the access and refresh tokens</h4>
             <p class="reveal">Send the following request (this is the same endpoint described in <a href="#ep-token-init">Access Token and Refresh Token</a>). Replace <code>{{code}}</code>, <code>{{client_id}}</code> and <code>{{client_secret}}</code> with the values copied in the previous steps.</p>
@@ -438,26 +488,48 @@ const documentationMarkup = `
             ${epHead("ep-token-init", "POST", "Access Token and Refresh Token", "4.1")}
             <p class="reveal">Exchanges an authorization code for an OAuth access token and refresh token. This request is used to initialize the credentials.</p>
             ${tokenUrlBox("code", "", "authorization_code")}
-            ${paramTable(["Parameter", "Required", "Description"], [
-              pRow("code", true, "Authorization code received for the OAuth authorization."),
-              pRow("client_id", true, "Configured OAuth client ID."),
-              pRow("client_secret", true, "Configured OAuth client secret."),
-              pRow("redirect_uri", true, `Configured redirect URI: <code>${REDIRECT_URI}</code>`),
-              pRow("grant_type", true, "<code>authorization_code</code>"),
-            ])}
+            ${paramTable(
+              ["Parameter", "Required", "Description"],
+              [
+                pRow(
+                  "code",
+                  true,
+                  "Authorization code received for the OAuth authorization.",
+                ),
+                pRow("client_id", true, "Configured OAuth client ID."),
+                pRow("client_secret", true, "Configured OAuth client secret."),
+                pRow(
+                  "redirect_uri",
+                  true,
+                  `Configured redirect URI: <code>${REDIRECT_URI}</code>`,
+                ),
+                pRow("grant_type", true, "<code>authorization_code</code>"),
+              ],
+            )}
           </article>
 
           <article class="chunk endpoint" id="ep-token-refresh" data-title="Get Access Token" data-group="Authentication APIs" data-method="POST" data-spy="ep-token-refresh">
             ${epHead("ep-token-refresh", "POST", "Get Access Token", "4.2")}
             <p class="reveal">Generates a fresh access token using the configured refresh token. The resulting access token is used in subsequent authenticated requests.</p>
             ${tokenUrlBox("refresh_token", "{{refresh token}}", "refresh_token")}
-            ${paramTable(["Parameter", "Required", "Description"], [
-              pRow("refresh_token", true, `The configured refresh token. See <a href="#credentials">Integration Configuration</a>.`),
-              pRow("client_id", true, "Configured OAuth client ID."),
-              pRow("client_secret", true, "Configured OAuth client secret."),
-              pRow("redirect_uri", true, `Configured redirect URI: <code>${REDIRECT_URI}</code>`),
-              pRow("grant_type", true, "<code>refresh_token</code>"),
-            ])}
+            ${paramTable(
+              ["Parameter", "Required", "Description"],
+              [
+                pRow(
+                  "refresh_token",
+                  true,
+                  `The configured refresh token. See <a href="#credentials">Integration Configuration</a>.`,
+                ),
+                pRow("client_id", true, "Configured OAuth client ID."),
+                pRow("client_secret", true, "Configured OAuth client secret."),
+                pRow(
+                  "redirect_uri",
+                  true,
+                  `Configured redirect URI: <code>${REDIRECT_URI}</code>`,
+                ),
+                pRow("grant_type", true, "<code>refresh_token</code>"),
+              ],
+            )}
           </article>
 
           <section class="chunk" id="customers" data-title="Customer &amp; Vendor APIs" data-group="Customer &amp; Vendor APIs" data-spy="customers">
@@ -470,12 +542,27 @@ const documentationMarkup = `
             <p class="reveal">Retrieves customer contacts from Zoho Books. The request filters contacts using <code>contact_type=customer</code>.</p>
             ${booksUrlBox("GET", "contacts", [ORG_PARAM, ["contact_type", "customer"], ["page", "1"]])}
             <div class="meta-chips reveal">${authChip}</div>
-            ${paramTable(["Parameter", "Required", "Description"], [
-              pRow("organization_id", true, `Zoho Books Sandbox organization ID. Use <code>${ORG_ID}</code>.`),
-              pRow("contact_type", true, "Set to <code>customer</code>."),
-              pRow("page", true, "Page number to retrieve. Increase this value to retrieve subsequent pages."),
-              pRow("per_page", false, "Controls the number of records returned per page."),
-            ])}
+            ${paramTable(
+              ["Parameter", "Required", "Description"],
+              [
+                pRow(
+                  "organization_id",
+                  true,
+                  `Zoho Books Sandbox organization ID. Use <code>${ORG_ID}</code>.`,
+                ),
+                pRow("contact_type", true, "Set to <code>customer</code>."),
+                pRow(
+                  "page",
+                  true,
+                  "Page number to retrieve. Increase this value to retrieve subsequent pages.",
+                ),
+                pRow(
+                  "per_page",
+                  false,
+                  "Controls the number of records returned per page.",
+                ),
+              ],
+            )}
             ${callout("info", "Pagination", "If the first page does not contain all customers, request <code>page=2</code>, <code>page=3</code>, and so on. Use <code>per_page</code> to control the number of records requested per page. Continue until there are no more records to retrieve.")}
           </article>
 
@@ -484,12 +571,27 @@ const documentationMarkup = `
             <p class="reveal">Retrieves vendor contacts from Zoho Books using <code>contact_type=vendor</code>.</p>
             ${booksUrlBox("GET", "contacts", [ORG_PARAM, ["contact_type", "vendor"], ["per_page", "2"]])}
             <div class="meta-chips reveal">${authChip}</div>
-            ${paramTable(["Parameter", "Required", "Description"], [
-              pRow("organization_id", true, "Zoho Books Sandbox organization ID."),
-              pRow("contact_type", true, "Set to <code>vendor</code>."),
-              pRow("page", false, "Page number. Increase this value to retrieve subsequent pages."),
-              pRow("per_page", false, "Number of records requested per page."),
-            ])}
+            ${paramTable(
+              ["Parameter", "Required", "Description"],
+              [
+                pRow(
+                  "organization_id",
+                  true,
+                  "Zoho Books Sandbox organization ID.",
+                ),
+                pRow("contact_type", true, "Set to <code>vendor</code>."),
+                pRow(
+                  "page",
+                  false,
+                  "Page number. Increase this value to retrieve subsequent pages.",
+                ),
+                pRow(
+                  "per_page",
+                  false,
+                  "Number of records requested per page.",
+                ),
+              ],
+            )}
             ${callout("info", "Pagination", "To retrieve the next set of vendors, increment the <code>page</code> value. For example, after <code>page=1</code>, request <code>page=2</code>, then <code>page=3</code>, until no further records are returned.")}
           </article>
 
@@ -510,10 +612,21 @@ const documentationMarkup = `
             <p class="reveal">Retrieves invoices belonging to a specific customer. The <code>customer_id</code> must be supplied dynamically by the client.</p>
             ${booksUrlBox("GET", "invoices", [ORG_PARAM, ["customer_id", "{CUSTOMER_ID}", true]])}
             <div class="meta-chips reveal">${authChip}</div>
-            ${paramTable(["Parameter", "Required", "Description"], [
-              pRow("organization_id", true, "Zoho Books Sandbox organization ID."),
-              pRow("customer_id", true, `The Zoho Books customer ID for which invoices should be retrieved, for example <code>1528435000000225015</code>. Obtain it from <a href="#ep-get-customers">Get Customers</a>.`),
-            ])}
+            ${paramTable(
+              ["Parameter", "Required", "Description"],
+              [
+                pRow(
+                  "organization_id",
+                  true,
+                  "Zoho Books Sandbox organization ID.",
+                ),
+                pRow(
+                  "customer_id",
+                  true,
+                  `The Zoho Books customer ID for which invoices should be retrieved, for example <code>1528435000000225015</code>. Obtain it from <a href="#ep-get-customers">Get Customers</a>.`,
+                ),
+              ],
+            )}
           </article>
 
           <article class="chunk endpoint" id="ep-get-invoice" data-title="Get an Invoice" data-group="Invoice APIs" data-method="GET" data-spy="ep-get-invoice">
@@ -521,10 +634,21 @@ const documentationMarkup = `
             <p class="reveal">Retrieves a specific invoice using its Zoho Books invoice ID.</p>
             ${booksUrlBox("GET", "invoices/{INVOICE_ID}", [ORG_PARAM])}
             <div class="meta-chips reveal">${authChip}</div>
-            ${paramTable(["Parameter", "Required", "Description"], [
-              pRow("INVOICE_ID", true, "The invoice ID returned when the invoice was created, for example <code>1528435000000699002</code>."),
-              pRow("organization_id", true, "Zoho Books Sandbox organization ID."),
-            ])}
+            ${paramTable(
+              ["Parameter", "Required", "Description"],
+              [
+                pRow(
+                  "INVOICE_ID",
+                  true,
+                  "The invoice ID returned when the invoice was created, for example <code>1528435000000699002</code>.",
+                ),
+                pRow(
+                  "organization_id",
+                  true,
+                  "Zoho Books Sandbox organization ID.",
+                ),
+              ],
+            )}
           </article>
 
           <article class="chunk endpoint" id="ep-create-invoice" data-title="Create Invoice" data-group="Invoice APIs" data-method="POST" data-spy="ep-create-invoice">
@@ -535,27 +659,112 @@ const documentationMarkup = `
             <h4 class="mini reveal">Request body</h4>
             ${codeBlock("create-invoice.json", "REQUEST", CREATE_INVOICE_BODY)}
             <h4 class="mini reveal">Request fields</h4>
-            ${paramTable(["Field", "Required", "Description"], [
-              pRow("mazad_user_id", true, "The customer's ID stored in Mazad's own database. It must correspond to an existing customer in Zoho Books."),
-              pRow("mazad_asset_owner", true, "The asset (lot) owner's ID as stored in Mazad's database. It must correspond to an existing customer in Zoho Books. Returned in the response as <code>client_asset_owner_id</code>."),
-              pRow("mazad_invoice_type", true, "Invoice type, for example <code>Bidder</code>."),
-              pRow("mazad_lot_number", true, "Lot number associated with the auction, for example <code>15679</code>."),
-              pRow("mazad_auction_category", true, "Auction category, for example <code>DS Vehicles</code>."),
-              pRow("mazad_salesperson", false, "Salesperson name, for example <code>Ahmed Ali</code>."),
-              pRow("date", false, "Invoice date in <code>YYYY-MM-DD</code> format."),
-              pRow("due_date", false, "Invoice due date in <code>YYYY-MM-DD</code> format."),
-              pRow("payment_terms", false, "Payment terms in days. <code>0</code> means the invoice is due immediately."),
-              pRow("payment_terms_label", false, "Payment terms label, for example <code>Due on Receipt</code>."),
-              pRow("reference_number", false, "Invoice reference number, for example <code>Lot 15679</code>."),
-              pRow("notes", false, "Additional invoice notes shown on the invoice."),
-              pRow("line_items", true, "Array of invoice items. It must contain at least one line item."),
-              pRow("line_items[].books_item_id", true, "Zoho Books item ID the line is created against, for example <code>1528435000000305443</code> (Auction Sale Price) or <code>1528435000000305451</code> (Auction Fees).", true),
-              pRow("line_items[].name", false, "Item name, for example <code>Auction Sale Price - Lot 15679</code>.", true),
-              pRow("line_items[].description", false, "Item description, for example the auctioned vehicle.", true),
-              pRow("line_items[].rate", true, "Numeric rate / unit price. Must be greater than or equal to 0.", true),
-              pRow("line_items[].quantity", true, "Numeric quantity. Must be greater than 0.", true),
-              pRow("line_items[].tax_id", false, "Zoho Books tax ID, for example <code>1528435000000140027</code> for the 10% Standard Rate tax. If supplied, that tax is applied to that line item only.", true),
-            ])}
+            ${paramTable(
+              ["Field", "Required", "Description"],
+              [
+                pRow(
+                  "mazad_user_id",
+                  true,
+                  "The customer's ID stored in Mazad's own database. It must correspond to an existing customer in Zoho Books.",
+                ),
+                pRow(
+                  "mazad_asset_owner",
+                  true,
+                  "The asset (lot) owner's ID as stored in Mazad's database. It must correspond to an existing customer in Zoho Books. Returned in the response as <code>client_asset_owner_id</code>.",
+                ),
+                pRow(
+                  "mazad_invoice_type",
+                  true,
+                  "Invoice type, for example <code>Bidder</code>.",
+                ),
+                pRow(
+                  "mazad_lot_number",
+                  true,
+                  "Lot number associated with the auction, for example <code>15679</code>.",
+                ),
+                pRow(
+                  "mazad_auction_category",
+                  true,
+                  "Auction category, for example <code>DS Vehicles</code>.",
+                ),
+                pRow(
+                  "mazad_salesperson",
+                  false,
+                  "Salesperson name, for example <code>Ahmed Ali</code>.",
+                ),
+                pRow(
+                  "date",
+                  false,
+                  "Invoice date in <code>YYYY-MM-DD</code> format.",
+                ),
+                pRow(
+                  "due_date",
+                  false,
+                  "Invoice due date in <code>YYYY-MM-DD</code> format.",
+                ),
+                pRow(
+                  "payment_terms",
+                  false,
+                  "Payment terms in days. <code>0</code> means the invoice is due immediately.",
+                ),
+                pRow(
+                  "payment_terms_label",
+                  false,
+                  "Payment terms label, for example <code>Due on Receipt</code>.",
+                ),
+                pRow(
+                  "reference_number",
+                  false,
+                  "Invoice reference number, for example <code>Lot 15679</code>.",
+                ),
+                pRow(
+                  "notes",
+                  false,
+                  "Additional invoice notes shown on the invoice.",
+                ),
+                pRow(
+                  "line_items",
+                  true,
+                  "Array of invoice items. It must contain at least one line item.",
+                ),
+                pRow(
+                  "line_items[].books_item_id",
+                  true,
+                  "Zoho Books item ID the line is created against, for example <code>1528435000000305443</code> (Auction Sale Price) or <code>1528435000000305451</code> (Auction Fees).",
+                  true,
+                ),
+                pRow(
+                  "line_items[].name",
+                  false,
+                  "Item name, for example <code>Auction Sale Price - Lot 15679</code>.",
+                  true,
+                ),
+                pRow(
+                  "line_items[].description",
+                  false,
+                  "Item description, for example the auctioned vehicle.",
+                  true,
+                ),
+                pRow(
+                  "line_items[].rate",
+                  true,
+                  "Numeric rate / unit price. Must be greater than or equal to 0.",
+                  true,
+                ),
+                pRow(
+                  "line_items[].quantity",
+                  true,
+                  "Numeric quantity. Must be greater than 0.",
+                  true,
+                ),
+                pRow(
+                  "line_items[].tax_id",
+                  false,
+                  "Zoho Books tax ID, for example <code>1528435000000140027</code> for the 10% Standard Rate tax. If supplied, that tax is applied to that line item only.",
+                  true,
+                ),
+              ],
+            )}
             ${callout("warn", "Mazad IDs", "<code>mazad_user_id</code> and <code>mazad_asset_owner</code> must contain IDs as stored in the Mazad database — they are <b>not</b> Zoho Books IDs. Each must match exactly one existing customer in Zoho Books, otherwise the request fails.")}
             ${callout("info", "Item IDs", "<code>books_item_id</code> is mandatory for every line item and must reference an existing Zoho Books item. Item IDs can be obtained from Zoho Books &rarr; Items by opening the required item.")}
             ${callout("info", "Tax ID", "If <code>tax_id</code> is provided for a line item, the specified tax is applied only to that item. A line item that omits <code>tax_id</code> &mdash; such as the second item in the example above &mdash; carries no tax. The required Tax ID can be obtained from Zoho Books &rarr; Settings &rarr; Taxes by searching for the relevant tax.")}
@@ -580,11 +789,26 @@ const documentationMarkup = `
             <p class="reveal">Downloads a specific invoice as a PDF file using its Zoho Books invoice ID.</p>
             ${booksUrlBox("GET", "invoices/{INVOICE_ID}", [ORG_PARAM, ["accept", "pdf"]])}
             <div class="meta-chips reveal">${authChip}<span class="chip">Response <b>application/pdf (file)</b></span></div>
-            ${paramTable(["Parameter", "Required", "Description"], [
-              pRow("INVOICE_ID", true, "The invoice ID returned when the invoice was created."),
-              pRow("organization_id", true, "Zoho Books Sandbox organization ID."),
-              pRow("accept", true, "Must be <code>pdf</code> to receive the invoice as a PDF file."),
-            ])}
+            ${paramTable(
+              ["Parameter", "Required", "Description"],
+              [
+                pRow(
+                  "INVOICE_ID",
+                  true,
+                  "The invoice ID returned when the invoice was created.",
+                ),
+                pRow(
+                  "organization_id",
+                  true,
+                  "Zoho Books Sandbox organization ID.",
+                ),
+                pRow(
+                  "accept",
+                  true,
+                  "Must be <code>pdf</code> to receive the invoice as a PDF file.",
+                ),
+              ],
+            )}
             ${callout("info", "PDF Response", `The response body is the PDF file itself, not JSON. Save the response as a <code>.pdf</code> file. To get shareable links to the PDF instead of the file bytes, use <a href="#ep-view-url">Get Invoice View &amp; Download URL</a>.`)}
           </article>
 
@@ -601,18 +825,47 @@ const documentationMarkup = `
             <h4 class="mini reveal">Request body</h4>
             ${codeBlock("create-customer-deposit.json", "REQUEST", CUSTOMER_DEPOSIT_BODY)}
             <h4 class="mini reveal">Request fields</h4>
-            ${paramTable(["Field", "Required", "Description"], [
-              pRow("mazad_user_id", true, "The customer's Mazad ID. It must match exactly one customer in Zoho Books."),
-              pRow("amount", true, "Deposit amount. Must be numeric and greater than 0."),
-              pRow("rrn", true, "Retrieval Reference Number from the payment gateway. It is recorded as the payment reference in Zoho Books."),
-              pRow("channel", false, "Payment channel. Supported values: <code>gateway</code>, <code>benefit</code>, <code>cheque</code>, <code>bank_transfer</code>, <code>fawri</code>, <code>pos</code>. Optional only when both <code>account_id</code> and <code>mode</code> are provided."),
-              pRow("account_id", false, "Zoho Books receiving account ID, for example <code>1528435000000305020</code> (NBB Call Account 005000090241)."),
-              pRow("mode", false, "Payment mode. Supported values: <code>creditcard</code>, <code>check</code>, <code>banktransfer</code>."),
-              pRow("date", false, "Deposit date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted or empty."),
-              pRow("description", false, "Deposit description. When omitted, a default description is generated automatically."),
-            ])}
+            ${paramTable(
+              ["Field", "Required", "Description"],
+              [
+                pRow(
+                  "mazad_user_id",
+                  true,
+                  "The customer's Mazad ID. It must match exactly one customer in Zoho Books.",
+                ),
+                pRow(
+                  "amount",
+                  true,
+                  "Deposit amount. Must be numeric and greater than 0.",
+                ),
+                pRow(
+                  "rrn",
+                  true,
+                  "Retrieval Reference Number from the payment gateway. It is recorded as the payment reference in Zoho Books.",
+                ),
+                pRow(
+                  "channel",
+                  false,
+                  "Payment channel. Supported values: <code>gateway</code>, <code>benefit</code>, <code>cheque</code>, <code>bank_transfer</code>, <code>fawri</code>, <code>pos</code>. Optional only when both <code>account_id</code> and <code>mode</code> are provided.",
+                ),
+                pRow(
+                  "mode",
+                  false,
+                  "Payment mode. Supported values: <code>creditcard</code>, <code>check</code>, <code>banktransfer</code>.",
+                ),
+                pRow(
+                  "date",
+                  false,
+                  "Deposit date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted or empty.",
+                ),
+                pRow(
+                  "description",
+                  false,
+                  "Deposit description. When omitted, a default description is generated automatically.",
+                ),
+              ],
+            )}
             ${callout("warn", "RRN is mandatory", "Every deposit must carry the <code>rrn</code> returned by the payment gateway. It is the reference the deposit is recorded under in Zoho Books, so it should be stored in Mazad alongside the deposit.")}
-            ${callout("info", "Channel, account and mode", "Either send <code>channel</code> and let the integration resolve the receiving account and payment mode, or send <code>account_id</code> and <code>mode</code> explicitly. If <code>channel</code> is omitted, both <code>account_id</code> and <code>mode</code> must be supplied.")}
             <h4 class="mini reveal">Channel &rarr; deposit account mapping</h4>
             <p class="reveal">When <code>channel</code> is supplied, the receiving account and the payment mode are resolved automatically using the mapping below. The Zoho Books account IDs are listed for both environments: use the <b>Sandbox</b> ID against the Sandbox organization (<code>${ORG_ID}</code>) and the <b>Production</b> ID against the live organization.</p>
             <div class="tbl-wrap reveal"><table><thead><tr><th>Channel</th><th>Deposit account</th><th>Account ID (Sandbox)</th><th>Account ID (Production)</th><th>Mode</th></tr></thead><tbody>
@@ -620,11 +873,9 @@ const documentationMarkup = `
               <tr><td><code>benefit</code></td><td>NBB Merchant 15170600 (10551C)</td><td><code>1528435000000305044</code></td><td><code>6939116000002836082</code></td><td><code>creditcard</code></td></tr>
               <tr><td><code>cheque</code></td><td>Deposits &mdash; Pending Bank Allocation (554433)</td><td><code>1528435000000305028</code></td><td><code>6939116000001272452</code></td><td><code>check</code></td></tr>
               <tr><td><code>bank_transfer</code> / <code>fawri</code></td><td>Deposits &mdash; Pending Bank Allocation (554433)</td><td><code>1528435000000305028</code></td><td><code>6939116000001272452</code></td><td><code>banktransfer</code></td></tr>
-              <tr><td><code>pos</code></td><td>Deposits &mdash; Pending Bank Allocation (554433)</td><td><code>1528435000000305028</code></td><td><code>6939116000001272452</code></td><td><code>creditcard</code></td></tr>
-              <tr><td>CrediMax <small>(legacy)</small></td><td>CrediMax Merchant (10550)</td><td><code>1528435000000304706</code></td><td><code>6939116000000188021</code></td><td>&mdash;</td></tr>
+              <tr><td><code>pos</code></td><td>Deposits &mdash; NBB Merchant Account (910911199) (10551B)  </td><td><code>1528435000000305036</code></td><td><code>6939116000001272452</code></td><td><code>creditcard</code></td></tr>
             </tbody></table></div>
             ${callout("warn", "Match the ID to the environment", `Account IDs are not shared between organizations. Sending a Production account ID to the Sandbox organization &mdash; or the reverse &mdash; is rejected. The example request above uses the Sandbox ID <code>1528435000000305020</code>.`)}
-            ${callout("info", "CrediMax is legacy", "The CrediMax Merchant account is kept for historical records only and has no <code>channel</code> value. New deposits should use one of the automated channels above, or pass <code>account_id</code> and <code>mode</code> explicitly.")}
             ${callout("ok", "Store the Payment ID", `The deposit is created as a customer payment in Zoho Books. Store the returned payment ID in Mazad — it is the <code>payment_id</code> required by <a href="#ep-apply-credit">Apply Credit to Invoice</a> when the deposit is later used against an invoice.`)}
             ${callout("info", "Response", "The response follows the same envelope as the other webhook APIs: <code>code</code>, <code>message</code> and a <code>response</code> object carrying the created payment details and the mapped Zoho customer.")}
           </article>
@@ -637,19 +888,64 @@ const documentationMarkup = `
             <h4 class="mini reveal">Request body</h4>
             ${codeBlock("create-payment.json", "REQUEST", CREATE_PAYMENT_BODY)}
             <h4 class="mini reveal">Request fields</h4>
-            ${paramTable(["Field", "Required", "Description"], [
-              pRow("mazad_user_id", true, "The Mazad customer ID. It must correspond to an existing customer in Zoho Books."),
-              pRow("amount", true, "Total payment amount. Must be numeric and greater than 0. The sum of all invoice allocations must <b>equal</b> this amount."),
-              pRow("channel", true, `Payment channel. Accepted values: <code>gateway</code>, <code>benefit</code>, <code>cheque</code>, <code>bank_transfer</code>, <code>fawri</code>, <code>pos</code>. It determines the receiving account and the payment mode automatically, using the <a href="#ep-create-deposit">same mapping as Create Customer Deposit</a>.`),
-              pRow("rrn", true, "Retrieval Reference Number from the payment gateway. It is passed to Zoho Books as the payment's <code>reference_number</code>."),
-              pRow("payment_mode", false, "Payment mode. Accepted values: <code>creditcard</code>, <code>check</code>, <code>banktransfer</code>. When supplied it must match the mode the <code>channel</code> maps to."),
-              pRow("invoices", true, "Array of invoices to which the payment is applied. At least one invoice is required."),
-              pRow("invoices[].invoice_id", true, `Zoho Books invoice ID, for example <code>1528435000000699002</code>. It must belong to the specified customer and have an outstanding balance. Obtain it from <a href="#ep-create-invoice">Create Invoice</a> or <a href="#ep-get-invoices">Get Invoices</a>.`, true),
-              pRow("invoices[].amount_applied", true, "Amount to apply to that invoice. Must be greater than 0 and must not exceed the invoice's outstanding balance.", true),
-              pRow("date", false, "Payment date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted."),
-              pRow("description", false, "Payment description, for example <code>Payment received through NBB Merchant</code>."),
-            ])}
-            ${callout("warn", "Allocations must equal the amount", "Unlike a deposit, this request leaves nothing unapplied: the <code>amount_applied</code> values across the <code>invoices</code> array must add up to exactly <code>amount</code>. To record money that is not yet tied to an invoice, use <a href=\"#ep-create-deposit\">Create Customer Deposit</a> instead.")}
+            ${paramTable(
+              ["Field", "Required", "Description"],
+              [
+                pRow(
+                  "mazad_user_id",
+                  true,
+                  "The Mazad customer ID. It must correspond to an existing customer in Zoho Books.",
+                ),
+                pRow(
+                  "amount",
+                  true,
+                  "Total payment amount. Must be numeric and greater than 0. The sum of all invoice allocations must <b>equal</b> this amount.",
+                ),
+                pRow(
+                  "channel",
+                  true,
+                  `Payment channel. Accepted values: <code>gateway</code>, <code>benefit</code>, <code>cheque</code>, <code>bank_transfer</code>, <code>fawri</code>, <code>pos</code>. It determines the receiving account and the payment mode automatically, using the <a href="#ep-create-deposit">same mapping as Create Customer Deposit</a>.`,
+                ),
+                pRow(
+                  "rrn",
+                  true,
+                  "Retrieval Reference Number from the payment gateway. It is passed to Zoho Books as the payment's <code>reference_number</code>.",
+                ),
+                pRow(
+                  "payment_mode",
+                  false,
+                  "Payment mode. Accepted values: <code>creditcard</code>, <code>check</code>, <code>banktransfer</code>. When supplied it must match the mode the <code>channel</code> maps to.",
+                ),
+                pRow(
+                  "invoices",
+                  true,
+                  "Array of invoices to which the payment is applied. At least one invoice is required.",
+                ),
+                pRow(
+                  "invoices[].invoice_id",
+                  true,
+                  `Zoho Books invoice ID, for example <code>1528435000000699002</code>. It must belong to the specified customer and have an outstanding balance. Obtain it from <a href="#ep-create-invoice">Create Invoice</a> or <a href="#ep-get-invoices">Get Invoices</a>.`,
+                  true,
+                ),
+                pRow(
+                  "invoices[].amount_applied",
+                  true,
+                  "Amount to apply to that invoice. Must be greater than 0 and must not exceed the invoice's outstanding balance.",
+                  true,
+                ),
+                pRow(
+                  "date",
+                  false,
+                  "Payment date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted.",
+                ),
+                pRow(
+                  "description",
+                  false,
+                  "Payment description, for example <code>Payment received through NBB Merchant</code>.",
+                ),
+              ],
+            )}
+            ${callout("warn", "Allocations must equal the amount", 'Unlike a deposit, this request leaves nothing unapplied: the <code>amount_applied</code> values across the <code>invoices</code> array must add up to exactly <code>amount</code>. To record money that is not yet tied to an invoice, use <a href="#ep-create-deposit">Create Customer Deposit</a> instead.')}
             ${callout("info", "Channel drives the account and mode", `<code>channel</code> is mandatory and selects the receiving account and payment mode automatically &mdash; see the <a href="#ep-create-deposit">channel mapping table</a>. <code>payment_mode</code> is optional, and when sent it must agree with the channel; otherwise the request is rejected.`)}
             ${callout("info", "Splitting one payment across invoices", "To settle several invoices with a single payment, add one entry per invoice to the <code>invoices</code> array, each with its own <code>amount_applied</code>.")}
             ${callout("ok", "Store the Payment ID", "Store the returned <code>payment_id</code> in Mazad together with the <code>rrn</code>, so the payment can be reconciled with the gateway and referenced by later operations.")}
@@ -673,13 +969,38 @@ const documentationMarkup = `
             <h4 class="mini reveal">Request body</h4>
             ${codeBlock("apply-credit-to-invoice.json", "REQUEST", APPLY_CREDIT_BODY)}
             <h4 class="mini reveal">Request fields</h4>
-            ${paramTable(["Field", "Required", "Description"], [
-              pRow("mazad_user_id", true, "The customer's ID from Mazad. It must match exactly one customer in Zoho Books, and the payments and the invoice must belong to that customer."),
-              pRow("invoice_id", true, `Zoho Books invoice ID the credit is applied to, for example <code>1528435000000538002</code>.`),
-              pRow("payments", true, "Array of payments to draw the credit from. It must contain at least one payment."),
-              pRow("payment_id", true, "Zoho Books payment ID holding the unapplied credit, for example <code>1528435000000519134</code>. This is the payment ID returned by <a href=\"#ep-create-deposit\">Create Customer Deposit</a> or <a href=\"#ep-create-payment\">Apply Payment to Invoices</a>.", true),
-              pRow("amount", true, "Amount to apply from that payment. It cannot exceed the payment's remaining unapplied balance.", true),
-            ])}
+            ${paramTable(
+              ["Field", "Required", "Description"],
+              [
+                pRow(
+                  "mazad_user_id",
+                  true,
+                  "The customer's ID from Mazad. It must match exactly one customer in Zoho Books, and the payments and the invoice must belong to that customer.",
+                ),
+                pRow(
+                  "invoice_id",
+                  true,
+                  `Zoho Books invoice ID the credit is applied to, for example <code>1528435000000538002</code>.`,
+                ),
+                pRow(
+                  "payments",
+                  true,
+                  "Array of payments to draw the credit from. It must contain at least one payment.",
+                ),
+                pRow(
+                  "payment_id",
+                  true,
+                  'Zoho Books payment ID holding the unapplied credit, for example <code>1528435000000519134</code>. This is the payment ID returned by <a href="#ep-create-deposit">Create Customer Deposit</a> or <a href="#ep-create-payment">Apply Payment to Invoices</a>.',
+                  true,
+                ),
+                pRow(
+                  "amount",
+                  true,
+                  "Amount to apply from that payment. It cannot exceed the payment's remaining unapplied balance.",
+                  true,
+                ),
+              ],
+            )}
             ${callout("warn", "Credit must be available", "Each <code>payment_id</code> must have enough unapplied balance for the requested <code>amount</code>, and the payment must belong to the same customer as the invoice. Applying more than the available credit, or applying more than the invoice balance due, is rejected.")}
             ${callout("info", "Using several credits", "To settle one invoice from multiple deposits or payments, add one entry per payment to the <code>payments</code> array, each with the amount to draw from it.")}
             ${callout("info", "Response", "The response follows the same envelope as the other webhook APIs: <code>code</code>, <code>message</code> and a <code>response</code> object confirming the invoice and the applied credits.")}
@@ -693,13 +1014,36 @@ const documentationMarkup = `
             <h4 class="mini reveal">Request body</h4>
             ${codeBlock("refund.json", "REQUEST", REFUND_BODY)}
             <h4 class="mini reveal">Request fields</h4>
-            ${paramTable(["Field", "Required", "Description"], [
-              pRow("mazad_user_id", true, "The Mazad customer ID being refunded. It must correspond to an existing customer in Zoho Books."),
-              pRow("refund_amount", true, "Amount to refund. Must be numeric and greater than 0, and cannot exceed the credit available on the customer's account."),
-              pRow("rrn", true, "Retrieval Reference Number of the original gateway transaction being refunded."),
-              pRow("refund_reference", true, "Mazad's own reference for the refund, for example <code>REF-068</code>. Store it so the refund can be traced from both systems."),
-              pRow("date", false, "Refund date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted."),
-            ])}
+            ${paramTable(
+              ["Field", "Required", "Description"],
+              [
+                pRow(
+                  "mazad_user_id",
+                  true,
+                  "The Mazad customer ID being refunded. It must correspond to an existing customer in Zoho Books.",
+                ),
+                pRow(
+                  "refund_amount",
+                  true,
+                  "Amount to refund. Must be numeric and greater than 0, and cannot exceed the credit available on the customer's account.",
+                ),
+                pRow(
+                  "rrn",
+                  true,
+                  "Retrieval Reference Number of the original gateway transaction being refunded.",
+                ),
+                pRow(
+                  "refund_reference",
+                  true,
+                  "Mazad's own reference for the refund, for example <code>REF-068</code>. Store it so the refund can be traced from both systems.",
+                ),
+                pRow(
+                  "date",
+                  false,
+                  "Refund date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted.",
+                ),
+              ],
+            )}
             ${callout("warn", "Field requirements are not annotated in the collection", "Unlike the other webhook requests, the Refund request in the Postman collection carries no per-field annotations. The table above follows the conventions of the other payment APIs &mdash; identifier, amount and references mandatory, date defaulting to today. Confirm against the Zoho function before relying on a field being optional.")}
             ${callout("info", "Refund against available credit", `A refund returns money the customer has already paid in, so the customer must hold enough unapplied credit &mdash; from <a href="#ep-create-deposit">Create Customer Deposit</a> or an unallocated <a href="#ep-create-payment">payment</a>. Credit that has already been applied to an invoice is no longer available to refund.`)}
             ${callout("info", "Response", "The response follows the same envelope as the other webhook APIs: <code>code</code>, <code>message</code> and a <code>response</code> object describing the refund that was created.")}
@@ -717,22 +1061,47 @@ const documentationMarkup = `
             <h4 class="mini reveal">Request body</h4>
             ${codeBlock("create-credit-note.json", "REQUEST", CREDIT_NOTE_BODY)}
             <h4 class="mini reveal">Request fields &amp; parameters</h4>
-            ${paramTable(["Field / Parameter", "Required", "Description"], [
-              pRow("organization_id", true, "Zoho Books Sandbox organization ID."),
-              pRow("invoice_id (URL)", true, "Invoice ID supplied dynamically in the URL. This identifies the invoice against which the credit note is created."),
-              pRow("customer_id", true, "Zoho Books customer ID."),
-              pRow("date", true, "Credit note date."),
-              pRow("reference_number", false, "Reference number for the credit note."),
-              pRow("place_of_supply", false, "Place of supply."),
-              pRow("currency_id", false, "Zoho Books currency ID."),
-              pRow("exchange_rate", false, "Exchange rate."),
-              pRow("line_items", true, "Items being credited."),
-              pRow("line_items[].name", true, "Credit note item name.", true),
-              pRow("line_items[].description", false, "Description of the credited item.", true),
-              pRow("line_items[].rate", true, "Rate/unit price.", true),
-              pRow("line_items[].quantity", true, "Quantity being credited.", true),
-              pRow("notes", false, "Credit note notes."),
-            ])}
+            ${paramTable(
+              ["Field / Parameter", "Required", "Description"],
+              [
+                pRow(
+                  "organization_id",
+                  true,
+                  "Zoho Books Sandbox organization ID.",
+                ),
+                pRow(
+                  "invoice_id (URL)",
+                  true,
+                  "Invoice ID supplied dynamically in the URL. This identifies the invoice against which the credit note is created.",
+                ),
+                pRow("customer_id", true, "Zoho Books customer ID."),
+                pRow("date", true, "Credit note date."),
+                pRow(
+                  "reference_number",
+                  false,
+                  "Reference number for the credit note.",
+                ),
+                pRow("place_of_supply", false, "Place of supply."),
+                pRow("currency_id", false, "Zoho Books currency ID."),
+                pRow("exchange_rate", false, "Exchange rate."),
+                pRow("line_items", true, "Items being credited."),
+                pRow("line_items[].name", true, "Credit note item name.", true),
+                pRow(
+                  "line_items[].description",
+                  false,
+                  "Description of the credited item.",
+                  true,
+                ),
+                pRow("line_items[].rate", true, "Rate/unit price.", true),
+                pRow(
+                  "line_items[].quantity",
+                  true,
+                  "Quantity being credited.",
+                  true,
+                ),
+                pRow("notes", false, "Credit note notes."),
+              ],
+            )}
             <h4 class="mini reveal">Response</h4>
             ${codeBlock("8.1.1 Successful Response", "SUCCESS", CREDIT_NOTE_RESPONSE)}
             ${callout("info", "Concise response", "The actual Zoho response contains additional accounting, tax, line-item, address, template, and system fields. The documentation intentionally shows a concise representation of the success response so the client can focus on the fields most relevant to the integration.")}
