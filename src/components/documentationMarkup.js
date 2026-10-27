@@ -352,7 +352,7 @@ const documentationMarkup = `
             <div class="hero-eyebrow">Client API Documentation</div>
             <h1>Zoho Books API Integration</h1>
             <p>Integrate <b>Mazad</b> with Zoho Books: retrieve customers and vendors, create invoices and payments, issue credit notes, and generate invoice view links using Zoho Books API v3.</p>
-            <div class="hero-actions"><a class="btn primary" href="#credentials">Credentials</a><a class="btn ghost" href="#flow">Integration flow</a><a class="btn ghost" href="#quick-reference">Quick reference</a></div>
+            <div class="hero-actions"><a class="btn primary" href="#credentials">Credentials</a><a class="btn ghost" href="#flow">Integration flow</a><a class="btn ghost" href="#quick-reference">Quick reference</a><a class="btn ghost" href="https://documenter.getpostman.com/view/49514057/2sBYHVue2c" target="_blank" rel="noopener noreferrer">Postman collection &nearr;</a></div>
             <dl class="hero-meta">
               <div><dt>Version</dt><dd>1.0</dd></div>
               <div><dt>Published</dt><dd>October 2026</dd></div>
@@ -365,7 +365,7 @@ const documentationMarkup = `
           <section class="chunk" id="overview" data-title="Overview" data-group="Introduction" data-spy="overview">
             ${sec("01", "Overview", "overview")}
             <p class="lead reveal">This document describes the APIs provided for integrating Mazad with Zoho Books. The collection supports customer and vendor retrieval, invoice operations, invoice PDF download, customer deposits, payments, application of existing credits to invoices, credit notes, and generation of an invoice download URL.</p>
-            <p class="reveal">The API requests use Zoho Books API v3 and the Zoho Accounts OAuth token endpoints. Some business operations such as invoice creation, customer deposits, payment creation, credit application, and invoice URL generation are exposed through Zoho Books <b>Incoming Webhooks</b>; for the client integration, these are documented as the corresponding business APIs.</p>
+            <p class="reveal">The API requests use Zoho Books API v3 and the Zoho Accounts OAuth token endpoints. Some business operations such as invoice creation, customer deposits, payment creation, credit application, and invoice URL generation are exposed through Zoho Books <b>Incoming Webhooks</b>; for the client integration, these are documented as the corresponding business APIs. The complete Postman collection is published at <a href="https://documenter.getpostman.com/view/49514057/2sBYHVue2c" target="_blank" rel="noopener noreferrer">Postman documentation</a> and is kept up to date with these APIs.</p>
             ${callout("warn", "Environment", `The Organization ID documented in this guide (<code>${ORG_ID}</code>) belongs to the Zoho Books <b>Sandbox</b> environment.`)}
           </section>
 
