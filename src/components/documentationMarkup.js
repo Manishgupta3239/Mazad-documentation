@@ -1,13 +1,8 @@
-// Documentation markup for the Mazad × Zoho Books client API docs.
-// Synced with the "Mazad books APIs" Postman collection (October 2026).
-
 const COPY_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></svg>`;
 const INFO_ICON = `<svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" /></svg>`;
 const WARN_ICON = `<svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" /><path d="M12 9v4M12 17h.01" /></svg>`;
 const OK_ICON = `<svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1" /><path d="m22 4-10 10-3-3" /></svg>`;
 const CAP_M = `style="font: 700 9.5px var(--mono); padding: 3px 5px; border-radius: 5px;"`;
-
-// ---- Integration values (from the Postman collection) ----
 const ORG_ID = "941299173";
 const CLIENT_ID = "1000.DJQKYV6HZY3O2CLIFWAVONZPMWXSGT";
 const CLIENT_SECRET = "1178ef3e182949b60be66fe7b0fb8630ec3d71888c";
@@ -18,6 +13,7 @@ const WH_CREATE_INVOICE = { name: "iw__sb_941299173_create_inovoice", key: "wSsV
 const WH_CREATE_PAYMENT = { name: "iw__sb_941299173_creating_payment", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x17P6O80WkByoy%2FFDaQ4MMxg5ikmFmEKdw9TTjjfKQOUCuQ4qcOxPz" };
 const WH_INVOICE_LINK = { name: "iw__sb_941299173_get_invoice_view_link", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x13My11GCkByoy%2FFDaQ4MMxg5ikmFmEKd04iXdkPWIMXa9R6yHNxjwiNK1A3o%3D" };
 const WH_CREATE_DEPOSIT = { name: "iw__sb_941299173_create_deposits", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x19%2FmUy1WkByoy%2FFDaQ4MMxg5ikmFmEKdw9TTjjf6hOnquTYCYKg4%3D" };
+const WH_REFUND = { name: "iw__sb_941299173_refund_amount", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x1w96k62SkByoy%2FFDaQ4MMxg5ikmFmEKdh4jf3l%2F%2BhP3KxV52F" };
 const WH_APPLY_CREDIT = { name: "iw__sb_941299173_apply_credit_to_invoice", key: "wSsVR60grkXzB64oz2CuILtqzA5dA1nyFER%2BilfwvyCpSvyTocc%2BnkfKVgWuFPcfFDFrFzsSrel8mhlV1GFa2Yl4mFECDSiF9mqRe1U4J3x19%2FmK1nykByoy%2FFDaQ4MMxg5ikmFmEKdy9yHugMSdLHq6S4euKhLYvtCqAngrlA%3D%3D" };
 
 const copyBtn = (value, label = "Copy URL", aria = "Copy URL") =>
@@ -80,7 +76,7 @@ const authChip = `<span class="chip">Header <b>Authorization: Zoho-oauthtoken {{
 
 // ---- Example payloads (from the Postman collection) ----
 const CREATE_INVOICE_BODY = `{
-  "mazad_user_id": "112",
+  "mazad_user_id": "120",
   "mazad_asset_owner": "119",
   "mazad_invoice_type": "Bidder",
   "mazad_lot_number": "15679",
@@ -97,17 +93,16 @@ const CREATE_INVOICE_BODY = `{
       "books_item_id": "1528435000000305443",
       "name": "Auction Sale Price - Lot 15679",
       "description": "2017 MITSUBISHI L 200",
-      "rate": 2450.000,
-      "quantity": 1,
+      "rate": 2500,
+      "quantity": 2,
       "tax_id": "1528435000000140027"
     },
     {
       "books_item_id": "1528435000000305451",
       "name": "Auction Fees",
-      "description": "1% Auction Fees calculated on the Auction Sale Price (Lot 15679: BHD 2,450.000 = BHD 24.500)",
-      "rate": 24.500,
-      "quantity": 1,
-      "tax_id": "1528435000000140027"
+      "description": "1% Auction Fees calculated on the Auction Sale Price (Lot 15679)",
+      "rate": 2500,
+      "quantity": 1
     }
   ]
 }`;
@@ -130,15 +125,18 @@ const CREATE_INVOICE_RESPONSE = `{
 }`;
 
 const CREATE_PAYMENT_BODY = `{
-  "mazad_user_id": "112",
-  "amount": 2721.950,
-  "payment_mode": "Credit Card",
+  "mazad_user_id": "120",
+  "amount": 1000,
+  "channel": "gateway",
+  "payment_mode": "creditcard",
+  "rrn": "NBB20t4o802w7h48wjwefeew33g7yje30001",
   "invoices": [
     {
-      "invoice_id": "1528435000000612012",
-      "amount_applied": 2721.950
+      "invoice_id": "1528435000000699002",
+      "amount_applied": 1000
     }
-  ]
+  ],
+  "date": "2026-10-20"
 }`;
 
 const CREATE_PAYMENT_RESPONSE = `{
@@ -156,24 +154,29 @@ const CREATE_PAYMENT_RESPONSE = `{
 }`;
 
 const CUSTOMER_DEPOSIT_BODY = `{
-  "mazad_user_id": "112",
-  "amount": 100.000,
-  "rrn": "NBB2026140887934432rjt4o802330001",
-  "reference_number": "MAZAD-DEP-07867801",
+  "mazad_user_id": "114",
+  "amount": 4000.000,
+  "rrn": "NBB20tdskjfkls834736768832hii89o80233e30001",
   "channel": "gateway",
-  "account_id": "1528435000000305020",
   "mode": "creditcard",
-  "date": "2026-05-18",
-  "description": "Customer deposit for Mazad user 112"
+  "date": "2026-05-18"
+}`;
+
+const REFUND_BODY = `{
+  "mazad_user_id": "115",
+  "refund_amount": 5000,
+  "rrn": "NBB20tdskj4eopfgeg4euh9o9e89o80233e30001",
+  "refund_reference": "REF-068",
+  "date": "2026-10-30"
 }`;
 
 const APPLY_CREDIT_BODY = `{
-  "mazad_user_id": "118",
-  "invoice_id": "1528435000000538002",
+  "mazad_user_id": "115",
+  "invoice_id": "1528435000000647002",
   "payments": [
     {
-      "payment_id": "1528435000000519134",
-      "amount": 2200
+      "payment_id": "1528435000000705002",
+      "amount": 560
     }
   ]
 }`;
@@ -302,9 +305,9 @@ const documentationMarkup = `
           <div class="nav-group"><p class="nav-title">Authentication</p><a href="#ep-token-init"><span class="m POST">POST</span>Access &amp; Refresh Token</a><a href="#ep-token-refresh"><span class="m POST">POST</span>Get Access Token</a></div>
           <div class="nav-group"><p class="nav-title">Customers &amp; Vendors</p><a href="#ep-get-customers"><span class="m GET">GET</span>Get Customers</a><a href="#ep-get-vendors"><span class="m GET">GET</span>Get Vendors</a></div>
           <div class="nav-group"><p class="nav-title">Invoices</p><a href="#ep-get-invoices"><span class="m GET">GET</span>Get Invoices</a><a href="#ep-customer-invoices"><span class="m GET">GET</span>Customer Invoices</a><a href="#ep-get-invoice"><span class="m GET">GET</span>Get Invoice</a><a href="#ep-create-invoice"><span class="m POST">POST</span>Create Invoice</a><a href="#ep-get-invoice-pdf"><span class="m GET">GET</span>Get Invoice PDF</a></div>
-          <div class="nav-group"><p class="nav-title">Payments</p><a href="#ep-create-deposit"><span class="m POST">POST</span>Create Customer Deposit</a><a href="#ep-create-payment"><span class="m POST">POST</span>Apply Payment to Invoices</a><a href="#ep-apply-credit"><span class="m POST">POST</span>Apply Credit to Invoice</a></div>
+          <div class="nav-group"><p class="nav-title">Payments</p><a href="#ep-create-deposit"><span class="m POST">POST</span>Create Customer Deposit</a><a href="#ep-create-payment"><span class="m POST">POST</span>Apply Payment to Invoices</a><a href="#ep-apply-credit"><span class="m POST">POST</span>Apply Credit to Invoice</a><a href="#ep-refund"><span class="m POST">POST</span>Refund</a></div>
           <div class="nav-group"><p class="nav-title">Credit Notes</p><a href="#ep-create-credit-note"><span class="m POST">POST</span>Create Credit Note</a></div>
-          <div class="nav-group"><p class="nav-title">Invoice URLs</p><a href="#ep-view-url"><span class="m POST">POST</span>Get Invoice View &amp; Download URL</a></div>
+          <div class="nav-group"><p class="nav-title">Invoice URLs</p><a href="#ep-view-url"><span class="m GET">GET</span>Get Invoice View &amp; Download URL</a></div>
           <div class="nav-group"><p class="nav-title">Integration Guide</p><a href="#flow">Integration Flow</a><a href="#rules">Key Rules</a><a href="#quick-reference">Quick Reference</a></div>
         </nav>
       </aside>
@@ -347,8 +350,9 @@ const documentationMarkup = `
               ${capCard("#ep-create-deposit", "Payments", "POST", "Create Customer Deposit", "Record an advance customer deposit received through a payment channel.")}
               ${capCard("#ep-create-payment", "Payments", "POST", "Apply Payment to Invoices", "Create a payment and apply it across one or more invoices.")}
               ${capCard("#ep-apply-credit", "Payments", "POST", "Apply Credit to Invoice", "Apply an existing customer payment/credit to an invoice.")}
+              ${capCard("#ep-refund", "Payments", "POST", "Refund", "Refund an amount from the customer's available credit.")}
               ${capCard("#ep-create-credit-note", "Credit Notes", "POST", "Create Credit Note", "Create a credit note against an invoice.")}
-              ${capCard("#ep-view-url", "Invoice URLs", "POST", "Get Invoice View &amp; Download URL", "Generate a hosted view URL and a direct download URL for an invoice PDF.")}
+              ${capCard("#ep-view-url", "Invoice URLs", "GET", "Get Invoice View &amp; Download URL", "Generate a hosted view URL and a direct download URL for an invoice PDF.")}
             </div>
           </section>
 
@@ -508,7 +512,7 @@ const documentationMarkup = `
             <div class="meta-chips reveal">${authChip}</div>
             ${paramTable(["Parameter", "Required", "Description"], [
               pRow("organization_id", true, "Zoho Books Sandbox organization ID."),
-              pRow("customer_id", true, `The Zoho Books customer ID for which invoices should be retrieved, for example <code>1528435000000127108</code>. Obtain it from <a href="#ep-get-customers">Get Customers</a>.`),
+              pRow("customer_id", true, `The Zoho Books customer ID for which invoices should be retrieved, for example <code>1528435000000225015</code>. Obtain it from <a href="#ep-get-customers">Get Customers</a>.`),
             ])}
           </article>
 
@@ -518,7 +522,7 @@ const documentationMarkup = `
             ${booksUrlBox("GET", "invoices/{INVOICE_ID}", [ORG_PARAM])}
             <div class="meta-chips reveal">${authChip}</div>
             ${paramTable(["Parameter", "Required", "Description"], [
-              pRow("INVOICE_ID", true, "The invoice ID returned when the invoice was created, for example <code>1528435000000182002</code>."),
+              pRow("INVOICE_ID", true, "The invoice ID returned when the invoice was created, for example <code>1528435000000699002</code>."),
               pRow("organization_id", true, "Zoho Books Sandbox organization ID."),
             ])}
           </article>
@@ -554,7 +558,7 @@ const documentationMarkup = `
             ])}
             ${callout("warn", "Mazad IDs", "<code>mazad_user_id</code> and <code>mazad_asset_owner</code> must contain IDs as stored in the Mazad database — they are <b>not</b> Zoho Books IDs. Each must match exactly one existing customer in Zoho Books, otherwise the request fails.")}
             ${callout("info", "Item IDs", "<code>books_item_id</code> is mandatory for every line item and must reference an existing Zoho Books item. Item IDs can be obtained from Zoho Books &rarr; Items by opening the required item.")}
-            ${callout("info", "Tax ID", "If <code>tax_id</code> is provided for a line item, the specified tax is applied only to that item. The required Tax ID can be obtained from Zoho Books &rarr; Settings &rarr; Taxes by searching for the relevant tax.")}
+            ${callout("info", "Tax ID", "If <code>tax_id</code> is provided for a line item, the specified tax is applied only to that item. A line item that omits <code>tax_id</code> &mdash; such as the second item in the example above &mdash; carries no tax. The required Tax ID can be obtained from Zoho Books &rarr; Settings &rarr; Taxes by searching for the relevant tax.")}
             ${callout("ok", "Store the Invoice ID", "After a successful invoice creation, Mazad must store the returned <code>invoice_id</code> in its own database against the corresponding customer/transaction. This ID is required for future invoice-related operations such as retrieving the invoice, generating the invoice download URL, applying payments or credits, and creating a related credit note.")}
             <h4 class="mini reveal">Response</h4>
             ${codeBlock("6.4.1 Successful Response", "SUCCESS", CREATE_INVOICE_RESPONSE)}
@@ -586,7 +590,7 @@ const documentationMarkup = `
 
           <section class="chunk" id="payments" data-title="Payment APIs" data-group="Payment APIs" data-spy="payments">
             ${sec("07", "Payment APIs", "payments")}
-            <p class="reveal">Three payment operations are available. <a href="#ep-create-deposit">Create Customer Deposit</a> records money received from a customer as an advance (unapplied) payment. <a href="#ep-create-payment">Apply Payment to Invoices</a> creates a payment and applies it directly to one or more invoices. <a href="#ep-apply-credit">Apply Credit to Invoice</a> applies an existing customer payment — such as a deposit recorded earlier — to an invoice.</p>
+            <p class="reveal">Three payment operations are available. <a href="#ep-create-deposit">Create Customer Deposit</a> records money received from a customer as an advance (unapplied) payment. <a href="#ep-create-payment">Apply Payment to Invoices</a> creates a payment and applies it directly to one or more invoices. <a href="#ep-apply-credit">Apply Credit to Invoice</a> applies an existing customer payment — such as a deposit recorded earlier — to an invoice. <a href="#ep-refund">Refund</a> returns money from the customer's available credit.</p>
           </section>
 
           <article class="chunk endpoint" id="ep-create-deposit" data-title="Create Customer Deposit" data-group="Payment APIs" data-method="POST" data-spy="ep-create-deposit">
@@ -600,15 +604,14 @@ const documentationMarkup = `
             ${paramTable(["Field", "Required", "Description"], [
               pRow("mazad_user_id", true, "The customer's Mazad ID. It must match exactly one customer in Zoho Books."),
               pRow("amount", true, "Deposit amount. Must be numeric and greater than 0."),
-              pRow("rrn", false, "Retrieval Reference Number from the payment gateway. When supplied it takes priority over <code>reference_number</code>."),
-              pRow("reference_number", false, "Alternative payment reference. <b>Mandatory if <code>rrn</code> is not provided</b> — at least one of <code>rrn</code> or <code>reference_number</code> is required."),
+              pRow("rrn", true, "Retrieval Reference Number from the payment gateway. It is recorded as the payment reference in Zoho Books."),
               pRow("channel", false, "Payment channel. Supported values: <code>gateway</code>, <code>benefit</code>, <code>cheque</code>, <code>bank_transfer</code>, <code>fawri</code>, <code>pos</code>. Optional only when both <code>account_id</code> and <code>mode</code> are provided."),
               pRow("account_id", false, "Zoho Books receiving account ID, for example <code>1528435000000305020</code> (NBB Call Account 005000090241)."),
               pRow("mode", false, "Payment mode. Supported values: <code>creditcard</code>, <code>check</code>, <code>banktransfer</code>."),
               pRow("date", false, "Deposit date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted or empty."),
               pRow("description", false, "Deposit description. When omitted, a default description is generated automatically."),
             ])}
-            ${callout("warn", "Reference is required", "The request must carry a payment reference: send <code>rrn</code> (preferred, from the payment gateway) or <code>reference_number</code>. If both are present, <code>rrn</code> is used.")}
+            ${callout("warn", "RRN is mandatory", "Every deposit must carry the <code>rrn</code> returned by the payment gateway. It is the reference the deposit is recorded under in Zoho Books, so it should be stored in Mazad alongside the deposit.")}
             ${callout("info", "Channel, account and mode", "Either send <code>channel</code> and let the integration resolve the receiving account and payment mode, or send <code>account_id</code> and <code>mode</code> explicitly. If <code>channel</code> is omitted, both <code>account_id</code> and <code>mode</code> must be supplied.")}
             <h4 class="mini reveal">Channel &rarr; deposit account mapping</h4>
             <p class="reveal">When <code>channel</code> is supplied, the receiving account and the payment mode are resolved automatically using the mapping below. The Zoho Books account IDs are listed for both environments: use the <b>Sandbox</b> ID against the Sandbox organization (<code>${ORG_ID}</code>) and the <b>Production</b> ID against the live organization.</p>
@@ -635,18 +638,21 @@ const documentationMarkup = `
             ${codeBlock("create-payment.json", "REQUEST", CREATE_PAYMENT_BODY)}
             <h4 class="mini reveal">Request fields</h4>
             ${paramTable(["Field", "Required", "Description"], [
-              pRow("mazad_user_id", true, "The customer's ID from Mazad's system. It must match exactly one customer in Zoho Books."),
-              pRow("amount", true, "Total payment amount. The sum of <code>amount_applied</code> across the invoices must not exceed this value."),
-              pRow("payment_mode", true, "Payment mode, for example <code>Credit Card</code>."),
+              pRow("mazad_user_id", true, "The Mazad customer ID. It must correspond to an existing customer in Zoho Books."),
+              pRow("amount", true, "Total payment amount. Must be numeric and greater than 0. The sum of all invoice allocations must <b>equal</b> this amount."),
+              pRow("channel", true, `Payment channel. Accepted values: <code>gateway</code>, <code>benefit</code>, <code>cheque</code>, <code>bank_transfer</code>, <code>fawri</code>, <code>pos</code>. It determines the receiving account and the payment mode automatically, using the <a href="#ep-create-deposit">same mapping as Create Customer Deposit</a>.`),
+              pRow("rrn", true, "Retrieval Reference Number from the payment gateway. It is passed to Zoho Books as the payment's <code>reference_number</code>."),
+              pRow("payment_mode", false, "Payment mode. Accepted values: <code>creditcard</code>, <code>check</code>, <code>banktransfer</code>. When supplied it must match the mode the <code>channel</code> maps to."),
               pRow("invoices", true, "Array of invoices to which the payment is applied. At least one invoice is required."),
-              pRow("invoices[].invoice_id", true, "Zoho Books invoice ID, for example <code>1528435000000612012</code>. Obtain it from <a href=\"#ep-create-invoice\">Create Invoice</a> or <a href=\"#ep-get-invoices\">Get Invoices</a>.", true),
-              pRow("invoices[].amount_applied", true, "Amount to apply to that invoice.", true),
+              pRow("invoices[].invoice_id", true, `Zoho Books invoice ID, for example <code>1528435000000699002</code>. It must belong to the specified customer and have an outstanding balance. Obtain it from <a href="#ep-create-invoice">Create Invoice</a> or <a href="#ep-get-invoices">Get Invoices</a>.`, true),
+              pRow("invoices[].amount_applied", true, "Amount to apply to that invoice. Must be greater than 0 and must not exceed the invoice's outstanding balance.", true),
               pRow("date", false, "Payment date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted."),
-              pRow("reference_number", false, "Payment reference number."),
-              pRow("description", false, "Payment description."),
+              pRow("description", false, "Payment description, for example <code>Payment received through NBB Merchant</code>."),
             ])}
-            ${callout("info", "Splitting one payment across invoices", "To settle several invoices with a single payment, add one entry per invoice to the <code>invoices</code> array, each with its own <code>amount_applied</code>. The individual applied amounts must add up to no more than <code>amount</code>.")}
-            ${callout("ok", "Store the Payment ID", "Store the returned <code>payment_id</code> in Mazad. Any remaining unapplied amount stays as a customer credit and can later be applied with <a href=\"#ep-apply-credit\">Apply Credit to Invoice</a>.")}
+            ${callout("warn", "Allocations must equal the amount", "Unlike a deposit, this request leaves nothing unapplied: the <code>amount_applied</code> values across the <code>invoices</code> array must add up to exactly <code>amount</code>. To record money that is not yet tied to an invoice, use <a href=\"#ep-create-deposit\">Create Customer Deposit</a> instead.")}
+            ${callout("info", "Channel drives the account and mode", `<code>channel</code> is mandatory and selects the receiving account and payment mode automatically &mdash; see the <a href="#ep-create-deposit">channel mapping table</a>. <code>payment_mode</code> is optional, and when sent it must agree with the channel; otherwise the request is rejected.`)}
+            ${callout("info", "Splitting one payment across invoices", "To settle several invoices with a single payment, add one entry per invoice to the <code>invoices</code> array, each with its own <code>amount_applied</code>.")}
+            ${callout("ok", "Store the Payment ID", "Store the returned <code>payment_id</code> in Mazad together with the <code>rrn</code>, so the payment can be reconciled with the gateway and referenced by later operations.")}
             <h4 class="mini reveal">Response</h4>
             ${codeBlock("7.2.1 Successful Response", "SUCCESS", CREATE_PAYMENT_RESPONSE)}
             <div class="tbl-wrap reveal"><table><thead><tr><th>Response Field</th><th>Description</th></tr></thead><tbody>
@@ -677,6 +683,26 @@ const documentationMarkup = `
             ${callout("warn", "Credit must be available", "Each <code>payment_id</code> must have enough unapplied balance for the requested <code>amount</code>, and the payment must belong to the same customer as the invoice. Applying more than the available credit, or applying more than the invoice balance due, is rejected.")}
             ${callout("info", "Using several credits", "To settle one invoice from multiple deposits or payments, add one entry per payment to the <code>payments</code> array, each with the amount to draw from it.")}
             ${callout("info", "Response", "The response follows the same envelope as the other webhook APIs: <code>code</code>, <code>message</code> and a <code>response</code> object confirming the invoice and the applied credits.")}
+          </article>
+
+          <article class="chunk endpoint" id="ep-refund" data-title="Refund" data-group="Payment APIs" data-method="POST" data-spy="ep-refund">
+            ${epHead("ep-refund", "POST", "Refund", "7.4")}
+            <p class="reveal">Refunds an amount back to a customer. Use it when money already received &mdash; a deposit or a payment &mdash; has to be returned, for example when an auction is cancelled or the customer overpaid.</p>
+            ${webhookUrlBox("POST", WH_REFUND)}
+            <div class="meta-chips reveal"><span class="chip">Content-Type <b>application/json</b></span><span class="chip">Auth <b>API key in URL (encapiKey)</b></span></div>
+            <h4 class="mini reveal">Request body</h4>
+            ${codeBlock("refund.json", "REQUEST", REFUND_BODY)}
+            <h4 class="mini reveal">Request fields</h4>
+            ${paramTable(["Field", "Required", "Description"], [
+              pRow("mazad_user_id", true, "The Mazad customer ID being refunded. It must correspond to an existing customer in Zoho Books."),
+              pRow("refund_amount", true, "Amount to refund. Must be numeric and greater than 0, and cannot exceed the credit available on the customer's account."),
+              pRow("rrn", true, "Retrieval Reference Number of the original gateway transaction being refunded."),
+              pRow("refund_reference", true, "Mazad's own reference for the refund, for example <code>REF-068</code>. Store it so the refund can be traced from both systems."),
+              pRow("date", false, "Refund date in <code>YYYY-MM-DD</code> format. Defaults to today's date when omitted."),
+            ])}
+            ${callout("warn", "Field requirements are not annotated in the collection", "Unlike the other webhook requests, the Refund request in the Postman collection carries no per-field annotations. The table above follows the conventions of the other payment APIs &mdash; identifier, amount and references mandatory, date defaulting to today. Confirm against the Zoho function before relying on a field being optional.")}
+            ${callout("info", "Refund against available credit", `A refund returns money the customer has already paid in, so the customer must hold enough unapplied credit &mdash; from <a href="#ep-create-deposit">Create Customer Deposit</a> or an unallocated <a href="#ep-create-payment">payment</a>. Credit that has already been applied to an invoice is no longer available to refund.`)}
+            ${callout("info", "Response", "The response follows the same envelope as the other webhook APIs: <code>code</code>, <code>message</code> and a <code>response</code> object describing the refund that was created.")}
           </article>
 
           <section class="chunk" id="credit-notes" data-title="Credit Note API" data-group="Credit Note API" data-spy="credit-notes">
@@ -717,13 +743,14 @@ const documentationMarkup = `
             <p class="reveal">This API returns hosted links to an invoice PDF. Unlike <a href="#ep-get-invoice-pdf">Get Invoice PDF</a>, which streams the file bytes back in the response, it returns two URLs that Mazad can store and hand to a user or customer directly.</p>
           </section>
 
-          <article class="chunk endpoint" id="ep-view-url" data-title="Get Invoice View and Download URL" data-group="Invoice URL API" data-method="POST" data-spy="ep-view-url">
-            ${epHead("ep-view-url", "POST", "Get Invoice View &amp; Download URL", "9.1")}
+          <article class="chunk endpoint" id="ep-view-url" data-title="Get Invoice View and Download URL" data-group="Invoice URL API" data-method="GET" data-spy="ep-view-url">
+            ${epHead("ep-view-url", "GET", "Get Invoice View &amp; Download URL", "9.1")}
             <p class="reveal">Generates the hosted URLs for a specific invoice. The response contains a <b>view URL</b> that opens the invoice PDF in the browser and a <b>download URL</b> that downloads the same PDF as a file. Both URLs point to the invoice PDF hosted on Zoho Catalyst.</p>
-            ${webhookUrlBox("POST", WH_INVOICE_LINK)}
-            <div class="meta-chips reveal"><span class="chip">Content-Type <b>application/json</b></span><span class="chip">Auth <b>API key in URL (encapiKey)</b></span></div>
+            ${webhookUrlBox("GET", WH_INVOICE_LINK)}
+            <div class="meta-chips reveal"><span class="chip">Method <b>GET with a JSON body</b></span><span class="chip">Content-Type <b>application/json</b></span><span class="chip">Auth <b>API key in URL (encapiKey)</b></span></div>
             <h4 class="mini reveal">Request body</h4>
             ${codeBlock("get-invoice-view-and-download-url.json", "REQUEST", INVOICE_LINK_BODY)}
+            ${callout("warn", "GET request with a JSON body", "This endpoint is called with the <b>GET</b> method while still sending the <code>invoice_id</code> in a JSON body. That combination is unusual: some HTTP clients and proxies drop the body from a GET request, which makes the call fail with a missing <code>invoice_id</code>. Use a client that preserves the body, such as Postman, cURL with <code>--data</code>, or a request library that allows a body on GET.")}
             <h4 class="mini reveal">Request fields</h4>
             ${paramTable(["Field", "Required", "Description"], [pRow("invoice_id", true, `The Zoho Books invoice ID for which the URLs are required, for example <code>1528435000000281002</code>. Use the <code>invoice_id</code> stored by Mazad when the invoice was created.`)])}
             <h4 class="mini reveal">Response</h4>
@@ -756,10 +783,11 @@ const documentationMarkup = `
               ${step(4, "Store invoice ID", "On successful creation, store the returned <code>invoice_id</code> in Mazad's database against the corresponding customer/transaction.")}
               ${step(5, "Retrieve invoice", "Use the stored <code>invoice_id</code> whenever the invoice needs to be retrieved or referenced.", "#ep-get-invoice")}
               ${step(6, "Generate the invoice URLs", "Pass the stored <code>invoice_id</code> to Get Invoice View &amp; Download URL, then use <code>view_url</code> to display the invoice and <code>download_url</code> to download it.", "#ep-view-url")}
-              ${step(7, "Record a deposit", "When a customer pays in advance, record the money with Create Customer Deposit using <code>rrn</code> or <code>reference_number</code> as the payment reference. Store the returned payment ID.", "#ep-create-deposit")}
-              ${step(8, "Apply payment to invoices", "When payment is received against invoices, pass the relevant <code>invoice_id</code> and <code>amount_applied</code> in the Apply Payment to Invoices request.", "#ep-create-payment")}
+              ${step(7, "Record a deposit", "When a customer pays in advance, record the money with Create Customer Deposit, passing the gateway <code>rrn</code> and the <code>channel</code>. Store the returned payment ID.", "#ep-create-deposit")}
+              ${step(8, "Apply payment to invoices", "When payment is received against invoices, send the <code>channel</code>, the gateway <code>rrn</code> and one entry per invoice, with the allocations adding up to the payment <code>amount</code>.", "#ep-create-payment")}
               ${step(9, "Apply existing credit", "To settle an invoice from a deposit or an unapplied payment, pass the <code>invoice_id</code> with the <code>payment_id</code> and amount to Apply Credit to Invoice.", "#ep-apply-credit")}
               ${step(10, "Create credit note", "If a credit note is required, pass the relevant <code>invoice_id</code> dynamically in the Create Credit Note URL.", "#ep-create-credit-note")}
+              ${step(11, "Refund when required", "If money has to be returned to the customer, call Refund with the original gateway <code>rrn</code> and Mazad's own <code>refund_reference</code>.", "#ep-refund")}
             </div>
           </section>
 
@@ -774,7 +802,9 @@ const documentationMarkup = `
               <li class="card reveal">Tax IDs can be located in Zoho Books → Settings → Taxes by searching for the required tax.</li>
               <li class="card reveal">For customer/vendor lists, use <code>page</code> to retrieve subsequent pages and <code>per_page</code> to control the number of records per page.</li>
               <li class="card reveal"><code>customer_id</code> and <code>invoice_id</code> used by subsequent APIs should be dynamically supplied using IDs obtained from the relevant API responses or stored by Mazad.</li>
-              <li class="card reveal">Create Customer Deposit requires a payment reference: send <code>rrn</code> or, when it is not available, <code>reference_number</code>. If <code>channel</code> is omitted, both <code>account_id</code> and <code>mode</code> must be supplied.</li>
+              <li class="card reveal">Create Customer Deposit requires the gateway <code>rrn</code>. If <code>channel</code> is omitted, both <code>account_id</code> and <code>mode</code> must be supplied instead.</li>
+              <li class="card reveal">Apply Payment to Invoices requires both <code>channel</code> and <code>rrn</code>, and the invoice allocations must add up to exactly the payment <code>amount</code>. <code>payment_mode</code> is optional but must agree with the channel when sent.</li>
+              <li class="card reveal">Store the gateway <code>rrn</code> against every deposit, payment and refund &mdash; it is the reference that ties the Zoho Books record back to the payment gateway transaction.</li>
               <li class="card reveal">Store the <code>payment_id</code> returned when a deposit or a payment is created. It is required by Apply Credit to Invoice to allocate the remaining credit to an invoice.</li>
               <li class="card reveal">Apply Credit to Invoice can only draw on unapplied credit belonging to the same customer as the invoice, and the amount cannot exceed the payment's remaining balance.</li>
               <li class="card reveal">For Create Credit Note, the <code>invoice_id</code> is supplied in the URL by the client.</li>
@@ -795,11 +825,12 @@ const documentationMarkup = `
               <tr><td><a href="#ep-get-invoice">Get Invoice</a></td><td><span class="method GET">GET</span></td><td>OAuth</td><td>Retrieve a specific invoice by invoice ID.</td></tr>
               <tr><td><a href="#ep-create-invoice">Create Invoice</a></td><td><span class="method POST">POST</span></td><td>API key</td><td>Create an invoice from Mazad information.</td></tr>
               <tr><td><a href="#ep-get-invoice-pdf">Get Invoice PDF</a></td><td><span class="method GET">GET</span></td><td>OAuth</td><td>Download an invoice as a PDF file.</td></tr>
-              <tr><td rowspan="3">Payments</td><td><a href="#ep-create-deposit">Create Customer Deposit</a></td><td><span class="method POST">POST</span></td><td>API key</td><td>Record an advance customer deposit.</td></tr>
+              <tr><td rowspan="4">Payments</td><td><a href="#ep-create-deposit">Create Customer Deposit</a></td><td><span class="method POST">POST</span></td><td>API key</td><td>Record an advance customer deposit.</td></tr>
               <tr><td><a href="#ep-create-payment">Apply Payment to Invoices</a></td><td><span class="method POST">POST</span></td><td>API key</td><td>Create a payment and apply it to invoice(s).</td></tr>
               <tr><td><a href="#ep-apply-credit">Apply Credit to Invoice</a></td><td><span class="method POST">POST</span></td><td>API key</td><td>Apply an existing payment/credit to an invoice.</td></tr>
+              <tr><td><a href="#ep-refund">Refund</a></td><td><span class="method POST">POST</span></td><td>API key</td><td>Refund an amount from the customer's available credit.</td></tr>
               <tr><td>Credit Notes</td><td><a href="#ep-create-credit-note">Create Credit Note</a></td><td><span class="method POST">POST</span></td><td>OAuth</td><td>Create a credit note against an invoice.</td></tr>
-              <tr><td>Invoice URLs</td><td><a href="#ep-view-url">Get Invoice View &amp; Download URL</a></td><td><span class="method POST">POST</span></td><td>API key</td><td>Generate the hosted view and download URLs for an invoice.</td></tr>
+              <tr><td>Invoice URLs</td><td><a href="#ep-view-url">Get Invoice View &amp; Download URL</a></td><td><span class="method GET">GET</span></td><td>API key</td><td>Generate the hosted view and download URLs for an invoice.</td></tr>
             </tbody></table></div>
             <h4 class="mini reveal">Where the IDs come from</h4>
             <p class="reveal">Most requests are chained together by IDs returned from an earlier call. The table below summarizes which API produces each ID and which APIs consume it.</p>
@@ -807,6 +838,7 @@ const documentationMarkup = `
               <tr><td><code>customer_id</code></td><td><a href="#ep-get-customers">Get Customers</a></td><td><a href="#ep-customer-invoices">Get Customer Invoices</a>, <a href="#ep-create-credit-note">Create Credit Note</a></td></tr>
               <tr><td><code>invoice_id</code></td><td><a href="#ep-create-invoice">Create Invoice</a>, <a href="#ep-get-invoices">Get Invoices</a></td><td><a href="#ep-get-invoice">Get Invoice</a>, <a href="#ep-get-invoice-pdf">Get Invoice PDF</a>, <a href="#ep-create-payment">Apply Payment to Invoices</a>, <a href="#ep-apply-credit">Apply Credit to Invoice</a>, <a href="#ep-create-credit-note">Create Credit Note</a>, <a href="#ep-view-url">Get Invoice View &amp; Download URL</a></td></tr>
               <tr><td><code>payment_id</code></td><td><a href="#ep-create-deposit">Create Customer Deposit</a>, <a href="#ep-create-payment">Apply Payment to Invoices</a></td><td><a href="#ep-apply-credit">Apply Credit to Invoice</a></td></tr>
+              <tr><td><code>rrn</code></td><td>The payment gateway</td><td><a href="#ep-create-deposit">Create Customer Deposit</a>, <a href="#ep-create-payment">Apply Payment to Invoices</a>, <a href="#ep-refund">Refund</a></td></tr>
               <tr><td><code>books_item_id</code></td><td>Zoho Books &rarr; Items</td><td><a href="#ep-create-invoice">Create Invoice</a> line items</td></tr>
               <tr><td><code>tax_id</code></td><td>Zoho Books &rarr; Settings &rarr; Taxes</td><td><a href="#ep-create-invoice">Create Invoice</a> line items</td></tr>
               <tr><td><code>account_id</code></td><td>Zoho Books &rarr; Chart of Accounts</td><td><a href="#ep-create-deposit">Create Customer Deposit</a></td></tr>
